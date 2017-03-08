@@ -113,7 +113,7 @@ $about_page_query = new WP_Query($about_page_args);
 
             <div class="row">
                 <div class="col-md-12">
-                    <p class="copyright">Copyright &copy; RonRouth. All rights reserved</p>
+                    <p class="copyright">Copyright &copy; RonRuth. All rights reserved</p>
                 </div>
             </div>
 
