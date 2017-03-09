@@ -122,7 +122,7 @@ a:hover{
   display:         flex;
 }
 
-header {
+.home-header{
     background: url(images/banner.jpg) no-repeat top right fixed;
     width: 100%;
     background-size: 100% 100%;
@@ -511,6 +511,14 @@ a.view-more:hover{
 }
 .contact-form .form-group p{
     display: none;
+}
+
+.contact-form span.wpcf7-not-valid-tip {
+    text-align: left;
+}
+
+.contact-form span.wpcf7-list-item{
+    margin: 0;
 }
 
 .email-check{

@@ -175,41 +175,6 @@ $product_query = new Wp_Query($product_args);
                 <h5>don't be shy!</h5>
                 <p>I'd Love to hear from u</p>
                 <?php echo do_shortcode('[contact-form-7 id="52" title="Contact form 1"]');?>
-                <!-- <form action="">
-                    <div class="form-group">
-                        <label for="name" class="col-md-2 col-sm-2 col-xs-2">name</label>
-                        <div class="col-md-10 col-sm-10 col-xs-10">
-                            <input type="text" class="form-control" name="fullname" id="name">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email" class="col-md-2 col-sm-2 col-xs-2">email</label>
-                        <div class="col-md-10 text-left col-sm-10 col-xs-10">
-                            <input type="email" class="form-control" name="email" id="email">
-                            <div class="email-check">
-                                <input type="checkbox" name="emailupdates" value=""> Check here to receive email updates
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject" class="col-md-2 col-sm-2 col-xs-2">subject</label>
-                        <div class="col-md-10 col-sm-10 col-xs-10">
-                            <input type="text" class="form-control" name="subject" id="subject">
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message" class="col-md-2 col-sm-2 col-xs-2">message</label>
-                        <div class="col-md-10 col-sm-10 col-xs-10">
-                            <textarea class="form-control" rows="5" name="message" id="message"></textarea> 
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="submit" class="col-md-2 hidden-xs hidden-sm">&nbsp;</label>
-                        <div class="col-md-10 col-sm-12 col-xs-12">
-                            <input type="submit" value="submit" name="submitvalue" id="submit">
-                        </div>
-                    </div>
-                </form> -->
             </div>
             <div class="col-md-2 hidden-xs hidden-sm">&nbsp;</div>
         </div>

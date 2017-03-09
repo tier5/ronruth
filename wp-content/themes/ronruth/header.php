@@ -9,19 +9,27 @@
 <link href="<?php echo get_template_directory_uri();?>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="<?php echo get_template_directory_uri();?>/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/fonts/font-awesome/css/font-awesome.min.css" type="text/css">
-
+<?php wp_head();?>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" 
 ></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/custom.js"></script>
 </head>
 <body>
-   
+<?php
+ if(is_front_page()){
+    ?>
+<header class="home-header">
+    <?php
+ }else{
+?> 
 <header>
+<?php }?>
+
     <div class="container">
         <div class="row">
             <div class="col-md-3 col-sm-3">
-                <div class="logo"><a href="#"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" class="img-responsive" alt="Ron Ruth"></a></div>
+                <div class="logo"><a href="<?php echo site_url();?>"><img src="<?php echo get_template_directory_uri();?>/images/logo.png" class="img-responsive" alt="Ron Ruth"></a></div>
             </div>
             <div class="col-md-9 col-sm-9">
                 <ul class="social">
@@ -34,12 +42,13 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="navigation">
-                    <ul>
+                   <!--  <ul>
                         <li class="active"><a href="#">home</a></li>
                         <li><a href="#">about us</a></li>
                         <li><a href="#">events calendar</a></li>
                         <li><a href="#">learning resources</a></li>
-                    </ul>
+                    </ul> -->
+                    <?php echo wp_nav_menu(array('theme_location' => 'primary'));?>
                 </div>
                 <div class="mobile-menu">
                   <a href="#" class="menu-icon" style="display: block;">
@@ -48,12 +57,13 @@
                     <span class="span bar bottom" style="background-color: #fff;">&nbsp;</span>
                   </a>
                   <div class="main-menu">
-                    <ul>
+                    <!-- <ul>
                        <li class="active"><a href="#">home</a></li>
                         <li><a href="#">about us</a></li>
                         <li><a href="#">events calendar</a></li>
                         <li><a href="#">learning resources</a></li>
-                    </ul>
+                    </ul> -->
+                    <?php echo wp_nav_menu(array('theme_location' => 'primary'));?>
                   </div>
                 </div>
             </div>
