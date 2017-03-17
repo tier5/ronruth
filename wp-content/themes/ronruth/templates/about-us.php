@@ -21,7 +21,6 @@
 	<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/custom.js"></script>
 	<?php wp_head();?>
-	
 </head>
 <body>
 <div class="page-scroll-buttons">
@@ -79,9 +78,18 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="banner-txt text-center">
-                    <h1>Creator of</h1>
+                	<h1>Creator of</h1>
                     <h2>"INSPIRAMAGINATIVITY.<pre>TM</pre>"</h2>
-                    <p>I'm a storyteller, performer, wish granter, mentor, teacher, entrepreneur, innovator, writer, husband, grandpa, friend to all, and unabashed Disney geek (don't judge me).</p>
+                	<?php $my_post = get_page_by_title( 'About Us', OBJECT, 'post' );
+						$id=$my_post->ID; 
+						$post = get_post($id); 
+						$content = apply_filters('the_content', $post->post_content); 
+						echo $content;  
+                	?>
+
+                    <!--<h1>Creator of</h1>
+                    <h2>"INSPIRAMAGINATIVITY.<pre>TM</pre>"</h2>
+                    <p>I'm a storyteller, performer, wish granter, mentor, teacher, entrepreneur, innovator, writer, husband, grandpa, friend to all, and unabashed Disney geek (don't judge me).</p>-->
                 </div>
             </div>
         </div>
@@ -95,10 +103,17 @@
 </header>
 <section class="about-block" id="about-block">
 	<div class="container">
-		<div class="row">
-			<div class="each-block" id="wedding-planner">
+		<?php global $post;
+$args = array( 'numberposts' => 4, 'category_name' => 'about-us' ,'orderby'=>'DESC');
+$q = new WP_Query( $args);
+
+if ( $q->have_posts() ) {
+    while ( $q->have_posts() ) {
+    $q->the_post(); ?>
+    <div class="row">
+			<div class="each-block" id="<?php the_title();?>">
 				<div class="animation-element slide-bottom">
-					<h3>wedding planner</h3>
+					<h3><?php the_title();?></h3>
 				</div>
 				<div class="row">
 					<div class="col-md-6">
@@ -108,15 +123,18 @@
 					</div>
 					<div class="col-md-6">
 						<div class="animation-element slide-right">
-							<p>More importantly, I'm a wedding business consultant, public speaker, designer of extraordinary client experiences, workshop facilitator and the creator of "Inspiramaginativity™" - the playful blending of inspiration, imagination & creativity to produce profitable business solutions for wedding & DJ professionals</p>
-							<p>I love living the dream of making positive changes in people's lives. With 45+ years in business management, including 25+ years of on the front lines of the wedding industry as a certified, Wedding Entertainment Director,® there's no greater thrill than being able to share my experience, expertise and passion to help other small business owners and entrepreneurs succeed.</p>
-							<p>Although I never planned to find myself in the wedding industry, I'm glad I arrived. As the owner of Ron Ruth Wedding Entertainment, my clients enjoyed the experience of my passionate, collaborative and very personal approach to helping them design and create unforgettably fun wedding receptions. </p>
+							<?php the_content();?>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="row">
+       <?php  the_title();?>
+    <?php }
+    wp_reset_postdata();
+}?>
+		
+		<!--<div class="row">
 			<div class="each-block" id="performer">
 				<div class="animation-element slide-bottom">
 					<h3>performer</h3>
@@ -173,7 +191,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>-->
 		<div class="row">
 			<div class="each-block" id="contact">
 				<div class="animation-element slide-bottom">

@@ -1173,3 +1173,7 @@ footer a:hover{
         font-size:25px;
     }
 }
+sup {
+    top: -2.5em !important;
+    font-size: 14px !important;
+}
