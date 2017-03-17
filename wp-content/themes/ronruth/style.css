@@ -84,6 +84,11 @@ Use it to make something cool, have fun, and share what you've learned with othe
     src:url('fonts/AbrahamLincoln.ttf') format('truetype');
 }
 
+@font-face {
+    font-family:'Aleo-Regular';
+    src:url('fonts/Aleo-Regular.otf') format('truetype');
+}
+
 body {
     position: relative;
     font-family:'GOTHAM-MEDIUM';
@@ -101,7 +106,7 @@ a{
     transition: 0.5s;
 }
 
-a:hover{
+a:hover, a:focus{
 	text-decoration: none;
 }
 
@@ -265,6 +270,8 @@ a:hover{
 .main-menu{
     display: block;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 9;
+    position: relative;
 }
 
 .main-menu li a{
@@ -545,6 +552,252 @@ a.view-more:hover{
     font-size: 25px;
 }
 
+
+/*
+======================================
+    about page
+======================================    
+*/
+
+.page-scroll-buttons{
+    position: fixed;
+    z-index: 1;
+    left: 30px;
+    top: 25%;
+}
+
+.page-scroll-buttons ul li a{
+    display: block;
+    height: 12px;
+    width: 12px;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 25px auto;
+    border-radius: 50%;
+}
+
+.page-scroll-buttons ul li.current a{
+    height: 25px;
+    width: 25px;
+    background: #fff;
+}
+
+
+
+.about-header{
+    background: url(images/banner.jpg) no-repeat top right fixed;
+    width: 100%;
+    background-size: 100% 100%;
+    position: relative;
+    height: 869px;
+}
+
+.transparent-blue{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(14, 119, 160, 0.7);
+}
+
+.about-header .banner-txt{
+    position: relative;
+}
+
+.about-header .banner-txt pre{
+    font-family: 'SourceSansPro-Regular';
+    display: inline-block;
+    background: none;
+    border: none;
+    font-size: 22px;
+    color: #fff;
+    padding: 0;
+    font-weight: bold;
+}
+
+header.about-header h1, header.about-header h2{
+    display: block;
+    background: none;
+    color: #fff;
+}
+
+header.about-header h1{
+    text-transform: none;
+    font-size: 40px;
+    margin-bottom: 0;
+}
+
+header.about-header p {
+    font-size: 14px;
+    width: 60%;
+    display: inline-block;
+}
+
+.about-header .scroller{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+
+.scroller span{
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    line-height: 25px;
+}
+
+.scroller a{
+    display: inline-block;
+    color: #fff;
+    font-size: 25px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin: 10px 0;
+    transition: 0.5s;
+}
+
+.scroller.scrollTop a{
+    margin: 0;
+}
+
+.scroller a:hover{
+    margin-bottom: 2px;
+}
+
+.about-block{
+    background: url(images/aboutbg.png) repeat top center;
+    width: 100%;
+    background-size: 100% 100%;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    padding: 80px 0 0;
+}
+
+.about-block h3{
+    font-family: 'bebas';
+    text-align: center;
+    font-size: 18px;
+    border: 1px solid #fff;
+    display: inline-block;
+    padding: 12px;
+    border-radius: 50px;
+    margin: 0;
+    width: 220px;
+}
+
+.about-block p{
+    text-align: left;
+    font-family: 'Aleo-Regular';
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.about-block .col-md-6:first-child{
+    border-right: 1px solid #fff; 
+}
+
+.about-block .each-block .row{
+    display: flex;
+}
+
+.about-block .each-block .col-md-6{
+    flex: 1;
+    padding: 130px 40px;
+}
+
+.about-block .each-block img{
+    margin: auto;
+    width: 100%;
+    border: 10px solid #fff;
+}
+
+.about-block .each-block#contact img{
+    border: none;
+    width: auto;
+}
+
+
+
+/*============animation element===============*/
+
+.animation-element {
+  opacity: 0;
+  position: relative;
+}
+/*animation element sliding left*/
+
+.animation-element.slide-left {
+  opacity: 0;
+  -moz-transition: all 500ms linear;
+  -webkit-transition: all 500ms linear;
+  -o-transition: all 500ms linear;
+  transition: all 500ms linear;
+  -moz-transform: translate3d(-100px, 0px, 0px);
+  -webkit-transform: translate3d(-100px, 0px, 0px);
+  -o-transform: translate(-100px, 0px);
+  -ms-transform: translate(-100px, 0px);
+  transform: translate3d(-100px, 0px, 0px);
+}
+
+.animation-element.slide-left.in-view {
+  opacity: 1;
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.animation-element.slide-right {
+  opacity: 0;
+  -moz-transition: all 500ms linear;
+  -webkit-transition: all 500ms linear;
+  -o-transition: all 500ms linear;
+  transition: all 500ms linear;
+  -moz-transform: translate3d(50px, 0px, 0px);
+  -webkit-transform: translate3d(50px, 0px, 0px);
+  -o-transform: translate(50px, 0px);
+  -ms-transform: translate(50px, 0px);
+  transform: translate3d(50px, 0px, 0px);
+}
+
+.animation-element.slide-right.in-view {
+  opacity: 1;
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.animation-element.slide-bottom {
+  opacity: 0;
+  -moz-transition: all 500ms linear;
+  -webkit-transition: all 500ms linear;
+  -o-transition: all 500ms linear;
+  transition: all 500ms linear;
+  -moz-transform: translate3d(0px, -100px, 0);
+  -webkit-transform: translate3d(0px, -100px, 0);
+  -o-transform: translate(0px, -100px);
+  -ms-transform: translate(0px, -100px);
+  transform: translate3d(0px, -100px, 0);
+}
+
+.animation-element.slide-bottom.in-view {
+  opacity: 1;
+  -moz-transform: translate3d(0px, 0px, 0px);
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  -o-transform: translate(0px, 0px);
+  -ms-transform: translate(0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+}
+
+
 footer{
     background: url('images/map.jpg') no-repeat fixed;
     background-size: cover;
@@ -719,6 +972,15 @@ footer a:hover{
     display: none;
 }
 
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+
+    .about-header .banner-txt {
+        padding: 130px 0;
+    }
+
+}
+
 @media screen and (max-width: 991px){
 
     .row-eq-height{
@@ -766,6 +1028,19 @@ footer a:hover{
     .footer-logo a{
         font-size: 20px;
     }
+
+    .about-header .banner-txt {
+        padding: 50px 0;
+    }
+
+    .about-block .each-block .col-md-6 {
+        padding: 50px 40px;
+    }
+
+    .about-block p {
+        font-size: 14px;
+        line-height: 24px;
+    }
 }
 
 @media screen and (max-width: 767px){
@@ -791,6 +1066,10 @@ footer a:hover{
 
     .banner-txt {
         padding: 100px 0;
+    }
+
+    .about-header .banner-txt {
+        padding: 50px 0 150px;
     }
 
     header {
@@ -856,6 +1135,28 @@ footer a:hover{
 
     .workshp-middle-block .content p {
         font-size: 22px;
+    }
+
+
+    .about-block .each-block .col-md-6 {
+        padding: 50px 20px;
+    }
+
+    .about-block .each-block img {
+        border: 5px solid #fff;
+    }
+
+    .about-header {
+        height: auto !important;
+    }
+
+    header.about-header p {
+        width: 100%;
+    }
+
+    .about-block p {
+        font-size: 12px;
+        line-height: 20px;
     }
 }
 
