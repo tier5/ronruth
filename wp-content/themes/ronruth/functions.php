@@ -446,3 +446,94 @@ function special_nav_class ($classes, $item) {
     }
     return $classes;
 }
+function wpb_widgets_init() {
+
+	register_sidebar( array(
+		'name' => __( 'About Sidebar', 'wpb' ),
+		'id' => 'sidebar-5',
+		'description' => __( 'The About Sidebar appears on the right on each page except the front page template', 'wpb' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	register_sidebar( array(
+		'name' => __( 'Learning Page Sidebar', 'wpb' ),
+		'id' => 'sidebar-6',
+		'description' => __( 'The Learning Page Sidebar appears on the right on each page except the front page template', 'wpb' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
+	}
+
+add_action( 'widgets_init', 'wpb_widgets_init' );
+add_filter('woocommerce_add_to_cart_redirect', 'themeprefix_add_to_cart_redirect');
+function themeprefix_add_to_cart_redirect() {
+ global $woocommerce;
+ $checkout_url = $woocommerce->cart->get_checkout_url();
+ return $checkout_url;
+}
+remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
+function jk_dequeue_styles( $enqueue_styles ) {
+	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
+	unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
+	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
+	return $enqueue_styles;
+}
+// Or just remove them all in one line
+add_filter( 'woocommerce_enqueue_styles', '__return_false' );
+
+    add_action( 'after_setup_theme', 'woocommerce_support' );
+    function woocommerce_support() {
+        add_theme_support( 'woocommerce' );
+    }
+
+    /*To dom_import_simplexml
+
+    Theme Development Tasks
+     ----> Remove version numbers from file front end
+     ----> "Hot off the hook" front page images  - Maybe use as Custom Post Type?
+     ----> Download plugins  - Custom Post Type UI   and Advanced Custom Fields
+     ----> Maybe we don't need the modal form for adding to the cart.  -- Woocommerce will drive form filling
+     ----> Add pagination on main product page. https://codex.wordpress.org/Pagination
+
+     WooCommerce Tasks
+    */
+
+    /****ENQUEUE SCRIPTS AND STYLES****/    
+    function c2h_scripts() {
+
+            /*
+            //second parameter is an array of dependents for js files array('')
+            //third parameter - version number of enqueued file (optional)
+            //final parameter - location of file path in front end - header or footer. True to appear in footer, false for header
+            */
+            wp_enqueue_script('main-jquery', get_template_directory_uri() . '/js/jquery-min.js', array('jquery'),'', false);
+            wp_enqueue_script('jquery-migrate', get_template_directory_uri() . '/js/jquery-migrate-min.js', array('jquery'),'', false);
+            wp_enqueue_script('slick_js', get_template_directory_uri() . '/js/slick.js', array('jquery'),'', false);
+
+    }
+
+    function c2h_styles() {
+
+
+            wp_enqueue_style('normalize', get_template_directory_uri() . '/styles/normalize.css');
+            wp_enqueue_style('style_css', get_template_directory_uri() . '/style.css');
+            /*wp_enqueue_style('modal', get_template_directory_uri() . '/styles/modal.css');*/
+
+    }
+
+    add_action('wp_enqueue_scripts', 'c2h_scripts');
+    add_action('wp_enqueue_scripts', 'c2h_styles');
+
+
+
+    remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+    remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+    add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+    add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);

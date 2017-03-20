@@ -9,7 +9,7 @@
 <link href="<?php echo get_template_directory_uri();?>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="<?php echo get_template_directory_uri();?>/style.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/fonts/font-awesome/css/font-awesome.min.css" type="text/css">
-<?php wp_head();?>
+
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" 
 ></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/bootstrap.min.js"></script>
@@ -24,6 +24,7 @@
  }else{
 ?> 
 <header>
+    
 <?php }?>
 
     <div class="container">
@@ -77,4 +78,5 @@
         </div>
     </div>
 </header>
+<?php wp_head();?>
 <div class="clear">&nbsp;</div>

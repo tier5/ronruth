@@ -26,7 +26,7 @@
 <div class="page-scroll-buttons">
 	<ul>
 		<li class="current"><a href="#about-header">&nbsp;</a></li>
-		<li><a href="#wedding-planner">&nbsp;</a></li>
+		<li><a href="#wedding planner">&nbsp;</a></li>
 		<li><a href="#performer">&nbsp;</a></li>
 		<li><a href="#mentor">&nbsp;</a></li>
 		<li><a href="#teacher">&nbsp;</a></li>
@@ -52,10 +52,10 @@
             <div class="col-md-12">
                 <div class="navigation">
                     <ul>
-                        <li><a href="#">home</a></li>
-                        <li class="active"><a href="#">about us</a></li>
-                        <li><a href="#">events calendar</a></li>
-                        <li><a href="#">learning resources</a></li>
+                        <li><a href="<?php echo site_url();?>">home</a></li>
+                        <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
+                        <li><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                 </div>
                 <div class="mobile-menu">
@@ -66,10 +66,10 @@
                   </a>
                   <div class="main-menu">
                     <ul>
-                        <li><a href="#">home</a></li>
-                        <li class="active"><a href="#">about us</a></li>
-                        <li><a href="#">events calendar</a></li>
-                        <li><a href="#">learning resources</a></li>
+                       <li><a href="<?php echo site_url();?>">home</a></li>
+                        <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
+                        <li><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                   </div>
                 </div>
@@ -104,10 +104,11 @@
 <section class="about-block" id="about-block">
 	<div class="container">
 		<?php global $post;
-$args = array( 'numberposts' => 4, 'category_name' => 'about-us' ,'orderby'=>'DESC');
+$args = array( 'numberposts' => 4, 'category_name' => 'about-us', 'order'=>'ASC');
 $q = new WP_Query( $args);
 
 if ( $q->have_posts() ) {
+	$count = 0;
     while ( $q->have_posts() ) {
     $q->the_post(); ?>
     <div class="row">
@@ -116,9 +117,14 @@ if ( $q->have_posts() ) {
 					<h3><?php the_title();?></h3>
 				</div>
 				<div class="row">
+					<?php if(++$count%2 != 0){ ?>
 					<div class="col-md-6">
 						<div class="animation-element slide-left">
-							<img src="<?php echo get_template_directory_uri();?>/images/about1.jpg" class="img-responsive">
+							<?php 
+							if ( has_post_thumbnail() ) { ?>
+							<img src="<?php the_post_thumbnail_url(full);?>" class="img-responsive">	
+							<?php } 
+							?>
 						</div>
 					</div>
 					<div class="col-md-6">
@@ -126,10 +132,27 @@ if ( $q->have_posts() ) {
 							<?php the_content();?>
 						</div>
 					</div>
+					<?php } else {?>
+
+					<div class="col-md-6">
+						<div class="animation-element slide-left">
+							<?php the_content();?>
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="animation-element slide-right">
+							<?php 
+							if ( has_post_thumbnail() ) { ?>
+							<img src="<?php the_post_thumbnail_url(full);?>" class="img-responsive">	
+							<?php } 
+							?>
+						</div>
+					</div>
+					<?php } ?>
 				</div>
 			</div>
 		</div>
-       <?php  the_title();?>
+       
     <?php }
     wp_reset_postdata();
 }?>
@@ -205,10 +228,11 @@ if ( $q->have_posts() ) {
 					</div>
 					<div class="col-md-6">
 						<div class="animation-element slide-right">
-							<p>For speaking or consulting information,</p> 
-							<p>please contact me via email,</p> 
-							<p>Ron@RonRuth.com or</p> 
-							<p>by phone/text (816) 224-4487</p>
+							<?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
+	<div id="secondary" class="widget-area" role="complementary">
+	<?php dynamic_sidebar( 'sidebar-5' ); ?>
+	</div>
+<?php endif; ?>
 						</div>
 					</div>
 				</div>

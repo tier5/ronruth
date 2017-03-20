@@ -121,8 +121,6 @@ $about_page_query = new WP_Query($about_page_args);
         </div>
     </div>
 </footer>
-
 <?php wp_footer(); ?>
-
 </body>
 </html>

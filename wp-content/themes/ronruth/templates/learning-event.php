@@ -20,7 +20,17 @@
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo get_template_directory_uri();?>/js/custom.js"></script>
-	<?php wp_head();?>
+	<?php wp_head();
+    $product_args = array(
+    'post_type' => 'product',
+    'posts_per_page' => 8,
+    'order_by' => 'id',
+    'order' => 'DESC'
+
+    );
+    $product_query = new Wp_Query($product_args);
+
+    ?>
 	
 </head>
 <body>
@@ -42,10 +52,10 @@
             <div class="col-md-12">
                 <div class="navigation">
                     <ul>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">events calendar</a></li>
-                        <li class="active"><a href="#">learning resources</a></li>
+                        <li><a href="<?php echo site_url();?>">home</a></li>
+                        <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
+                        <li><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                 </div>
                 <div class="mobile-menu">
@@ -56,10 +66,10 @@
                   </a>
                   <div class="main-menu">
                     <ul>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">events calendar</a></li>
-                        <li class="active"><a href="#">learning resources</a></li>
+                        <li><a href="<?php echo site_url();?>">home</a></li>
+                        <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
+                        <li><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                   </div>
                 </div>
@@ -68,12 +78,12 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="banner-txt text-center">
-                    <h1>Grab your <small>#</small>INSPIRAMAGINATIVITY on dvd!</h1><br>
-                    <h1>on dvd!</h1>
-                    <span>(Get FREE SHIPPING Within The Continental U.S.)</span>
-                    <h2>Celebrate INSPIRAMAGINATIVITY</h2><pre>TM</pre>
-                    <p>The Playful Blending Of Inspiration, Imagination & Creativity
-To Produce Profitable Business Solutions For Wedding & DJ Professionals..</p>
+                    <?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
+    <div id="secondary" class="widget-area" role="complementary">
+    <?php dynamic_sidebar( 'sidebar-6' ); ?>
+     </div>
+<?php endif; ?>
+
                 </div>
             </div>
         </div>
@@ -88,19 +98,40 @@ To Produce Profitable Business Solutions For Wedding & DJ Professionals..</p>
             </div>
         </div>
         <div class="row">
+                <?php $count = 1; if($product_query->have_posts()):?>
+
+            <?php 
+                
+            while($product_query->have_posts()):$product_query->the_post();?>
+                <?php $pro_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+                $currency = get_woocommerce_currency_symbol();
+                $price = get_post_meta( get_the_ID(), '_regular_price', true);
+                ?>
             <div class="col-md-3 col-sm-3">
                 <div class="book-block">
                     <div class="image">
-                        <a href="#">
-                            <img src="<?php echo get_template_directory_uri();?>/images/book1.jpg" alt="Book" class="img-responsive">
-                            <span class="price">$10</span>
+                        <a href="<?php echo get_permalink();?>">
+                            <img src="<?php echo ($pro_image[0]!="")?$pro_image[0]:"";?>" alt="Book" class="img-responsive">
+                            <span class="price"><?php echo $currency;?><?php echo $price;?></span>
                         </a>
-                        <span class="buynow"><a href="<?php echo site_url();?>/add-to-cart=<?php echo get_the_ID();?>" class="blog-title-link">Buy Now</a></span>
+                        <span class="buynow">
+                            <?php $add_to_cart = do_shortcode('[add_to_cart_url id="'.get_the_ID().'"]'); ?>
+<a href="<?php echo $add_to_cart;?>" class="blog-title-link">Buy Now</a>
+                        </span>
                     </div>
-                    <p>Product name here</p>
+                    <p><?php echo get_the_title();?></p>
                 </div>
             </div>
-            <div class="col-md-3 col-sm-3">
+           <?php if ($count%4 == 0)
+            {
+                echo "<div class='clear'>&nbsp;</div>";
+            }
+            $count++;
+        ?>
+        <?php endwhile;?>
+        <?php endif;?>
+
+            <!--<div class="col-md-3 col-sm-3">
                 <div class="book-block">
                     <div class="image">
                         <a href="#">
@@ -186,7 +217,7 @@ To Produce Profitable Business Solutions For Wedding & DJ Professionals..</p>
                     </div>
                     <p>Product name here</p>
                 </div>
-            </div>
+            </div>-->
         </div>
         <div class="row">
             <a href="<?php echo site_url();?>/shop" class="view-more">view more</a>
