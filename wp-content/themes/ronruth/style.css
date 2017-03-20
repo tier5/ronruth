@@ -581,8 +581,6 @@ a.view-more:hover{
     background: #fff;
 }
 
-
-
 .about-header{
     background: url(images/banner.jpg) no-repeat top right fixed;
     width: 100%;
@@ -796,6 +794,56 @@ header.about-header p {
   -ms-transform: translate(0px, 0px);
   transform: translate3d(0px, 0px, 0px);
 }
+
+/****************Learning Events*****************/
+.learning-header {
+    background: url(images/learning-banner.jpg) no-repeat top center fixed;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+}
+
+.learning-header .banner-txt{
+    padding: 100px 0;
+}
+
+.learning-header .banner-txt h1{
+    font-family: 'bebas';
+    letter-spacing: 1px;
+    font-size: 34px;
+}
+
+.learning-header .banner-txt h1 small {
+    font-family: 'SourceSansPro-Regular';
+    color: #000;
+    font-size: 35px;
+}
+
+.learning-header .banner-txt span{
+    display: block;
+    color: #fff;
+    font-size: 20px;
+}
+
+.learning-header .banner-txt h2{
+    background: none;
+    font-family: 'Aleo-Regular';
+    font-size: 34px;
+    text-transform: none;
+    color: #fff;
+}
+
+.learning-header .banner-txt pre{
+    font-family: 'SourceSansPro-Regular';
+    display: inline-block;
+    background: none;
+    border: none;
+    font-size: 15px;
+    color: #fff;
+    padding: 0;
+    font-weight: bold;
+}
+
 
 
 footer{
