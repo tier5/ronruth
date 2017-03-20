@@ -844,6 +844,109 @@ header.about-header p {
     font-weight: bold;
 }
 
+.product-img img{
+    margin: auto;
+}
+
+.product-img .item img{
+    width: 300px;
+}
+
+.carousel-control.left, .carousel-control.right{
+    background: none;
+}
+
+a.carousel-control{
+    color: #333;
+    top: 50%;
+}
+
+.bestselling-details h3{
+    font-size: 34px;
+    color: #454444;
+    font-family: 'Aleo-Regular';
+    text-align: center;
+    letter-spacing: 1px;
+    margin: 0 0 80px;
+}
+
+.product-descrp p{
+    font-family: 'SourceSansPro-Regular';
+    font-size: 12px;
+    color: #333;
+    line-height: 26px;
+    margin-bottom: 20px;
+}
+
+.product-price span{
+    color: #000;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+.product-price span.price{
+    color: #FC6334;
+    font-size: 40px;
+}
+
+.product-price p{
+    color: #413D3D;
+    font-size: 20px;
+}
+
+.product-price .shipping p{
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.product-price .shipping{
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.product-price .shipping strong{
+    font-weight: normal;
+    font-family: 'GOTHAM-MEDIUM';
+    font-size: 12px;
+}
+
+.buy-form .form-control{
+    border: 1px solid #999;
+    border-radius: 0;
+    color: #000;
+    height: 40px;
+    width: auto;
+}
+
+.buy-form input[type="submit"]{
+    background: #FC6334;
+    border: 1px solid #FC6334;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 10px 40px;
+}
+
+.review h4{
+    color: #FC6334;
+    font-size: 20px;
+}
+
+.review .each-review{
+    font-family: 'SourceSansPro-Regular';
+    margin: 20px 0;
+    padding-left: 20px;
+    font-size: 18px;
+}
+
+.review .each-review strong{
+    color: #000;
+}
+
+.review .each-review p{
+    color: #666;
+}
 
 
 footer{
@@ -1058,6 +1161,11 @@ footer a:hover{
         margin: 20px 0;
     }
 
+
+    .buy-form .form-control {
+        width: 100%;
+    }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px){
@@ -1088,6 +1196,10 @@ footer a:hover{
     .about-block p {
         font-size: 14px;
         line-height: 24px;
+    }
+
+    .product-img .item img {
+        width: 200px;
     }
 }
 
@@ -1206,6 +1318,15 @@ footer a:hover{
         font-size: 12px;
         line-height: 20px;
     }
+
+    .product-img .item img {
+        width: 50%;
+    }
+
+    .bestselling-details h3 {
+        margin: 0 0 20px;
+    }
+
 }
 
 @media screen and (max-width: 480px){
@@ -1219,6 +1340,26 @@ footer a:hover{
 
     header h2 {
         font-size:25px;
+    }
+
+    .learning-header .banner-txt h1 {
+        font-size: 25px;
+    }
+
+    .learning-header .banner-txt h2 {
+        font-size: 20px;
+    }
+
+    .bestselling-details h3 {
+        font-size: 17px;
+    }
+
+    .product-price span.price {
+        font-size: 30px;
+    }
+
+    .product-price span {
+        font-size: 18px;
     }
 }
 sup {
