@@ -95,13 +95,14 @@
         </div>
     </div>
 </header>
-
-	<div id="primary" class="content-area">
+<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div class="woocommerce">
+			<div class="clear">&nbsp;</div>
+			<section class="bestselling-details">
+    		<div class="container">
+        	<div class="row">
 		<?php woocommerce_content(); ?>
-			</div>
-		</main><!-- .site-main -->
-	</div><!-- .content-area -->
+	</div></section></div></div>
+</main></div>			
 
 <?php get_footer(); ?>

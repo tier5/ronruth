@@ -20,13 +20,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-global $product;
+global $post, $product;
 
 ?>
+<div itemprop="description" class="product-descrp">
+	<?php echo apply_filters( 'woocommerce_short_description', $post->post_excerpt ) ?>
+</div>
 <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-
-	<p class="price"><?php echo $product->get_price_html(); ?></p>
-
+<div class="product-price">
+                        <span class="price"><?php echo $product->get_price_html(); ?></span>
+                        <span> &amp; free shipping</span>
+                        <p>IN THE CONTINENTAL U.S..</p>
+                        <div class="shipping">
+                            <p>FOR INTERNATIONAL SHIPPING ONLY = ADD $10.00</p>
+                            <strong>
+                                NOTE: ONLY ADD $10 ONCE FOR YOUR TOTAL DVD ORDER
+                            </strong>
+                            <p>(Purchase Additional DVDs @ U.S. Pricing)</p>
+                        </div></div>
 	<meta itemprop="price" content="<?php echo esc_attr( $product->get_display_price() ); ?>" />
 	<meta itemprop="priceCurrency" content="<?php echo esc_attr( get_woocommerce_currency() ); ?>" />
 	<link itemprop="availability" href="http://schema.org/<?php echo $product->is_in_stock() ? 'InStock' : 'OutOfStock'; ?>" />

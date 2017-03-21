@@ -881,7 +881,8 @@ a.carousel-control{
     font-family: 'Aleo-Regular';
     text-align: center;
     letter-spacing: 1px;
-    margin: 0 0 80px;
+    margin: 0 0 20px;
+    width: 50%;
 }
 
 .product-descrp p{
@@ -1766,4 +1767,8 @@ footer a:hover{
 sup {
     top: -2.5em !important;
     font-size: 14px !important;
+}
+.woocommerce-images {
+    left: 125px;
+    width: 450px;
 }

@@ -475,65 +475,14 @@ function themeprefix_add_to_cart_redirect() {
  $checkout_url = $woocommerce->cart->get_checkout_url();
  return $checkout_url;
 }
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-add_filter( 'woocommerce_enqueue_styles', 'jk_dequeue_styles' );
-function jk_dequeue_styles( $enqueue_styles ) {
-	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
-	unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
-	unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
-	return $enqueue_styles;
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
+add_action( 'woocommerce_single_product_summary', 'show_shipping', 35 );
+function show_shipping() {
+  global $product;
+  $class_id = $product->get_shipping_class_id();
+  if ($class_id) {
+    $term = get_term_by( 'id', $class_id, 'product_shipping_class' );
+    echo '<p class="shipping_class">Shipping class: '.$term->name.'</p>';
+  }
 }
-// Or just remove them all in one line
-add_filter( 'woocommerce_enqueue_styles', '__return_false' );
-
-    add_action( 'after_setup_theme', 'woocommerce_support' );
-    function woocommerce_support() {
-        add_theme_support( 'woocommerce' );
-    }
-
-    /*To dom_import_simplexml
-
-    Theme Development Tasks
-     ----> Remove version numbers from file front end
-     ----> "Hot off the hook" front page images  - Maybe use as Custom Post Type?
-     ----> Download plugins  - Custom Post Type UI   and Advanced Custom Fields
-     ----> Maybe we don't need the modal form for adding to the cart.  -- Woocommerce will drive form filling
-     ----> Add pagination on main product page. https://codex.wordpress.org/Pagination
-
-     WooCommerce Tasks
-    */
-
-    /****ENQUEUE SCRIPTS AND STYLES****/    
-    function c2h_scripts() {
-
-            /*
-            //second parameter is an array of dependents for js files array('')
-            //third parameter - version number of enqueued file (optional)
-            //final parameter - location of file path in front end - header or footer. True to appear in footer, false for header
-            */
-            wp_enqueue_script('main-jquery', get_template_directory_uri() . '/js/jquery-min.js', array('jquery'),'', false);
-            wp_enqueue_script('jquery-migrate', get_template_directory_uri() . '/js/jquery-migrate-min.js', array('jquery'),'', false);
-            wp_enqueue_script('slick_js', get_template_directory_uri() . '/js/slick.js', array('jquery'),'', false);
-
-    }
-
-    function c2h_styles() {
-
-
-            wp_enqueue_style('normalize', get_template_directory_uri() . '/styles/normalize.css');
-            wp_enqueue_style('style_css', get_template_directory_uri() . '/style.css');
-            /*wp_enqueue_style('modal', get_template_directory_uri() . '/styles/modal.css');*/
-
-    }
-
-    add_action('wp_enqueue_scripts', 'c2h_scripts');
-    add_action('wp_enqueue_scripts', 'c2h_styles');
-
-
-
-    remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-    remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-    add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
-    add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
