@@ -89,6 +89,16 @@ Use it to make something cool, have fun, and share what you've learned with othe
     src:url('fonts/Aleo-Regular.otf') format('truetype');
 }
 
+@font-face {
+    font-family:'Raleway-Regular';
+    src:url('fonts/Raleway-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family:'Raleway-ExtraBold';
+    src:url('fonts/Raleway-ExtraBold.ttf') format('truetype');
+}
+
 body {
     position: relative;
     font-family:'GOTHAM-MEDIUM';
@@ -115,6 +125,10 @@ a:hover, a:focus{
     clear: both;
     width: 100%;
     margin: 10px 0;
+}
+
+.nopadding{
+    padding: 0 !important;
 }
 
 /*
@@ -948,7 +962,394 @@ a.carousel-control{
     color: #666;
 }
 
+/*********************Event Page**********************/
 
+.event-header {
+    background: url(images/event-banner.jpg) no-repeat top center fixed;
+    width: 100%;
+    background-size: 100% 100%;
+    position: relative;
+    text-align: center;
+}
+
+.event-header h1{
+    display: block;
+    font-family: 'Raleway-ExtraBold';
+    background: none;
+    color: #FC6334;
+    font-size: 80px;
+    margin: 0;
+}
+
+.event-header h2{
+    font-family: 'Raleway-Regular';
+    display: block;
+    background: none;
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 22px;
+    margin: 0;
+    letter-spacing: 0;
+}
+.event-header h2 span{
+    color: #FC6334;
+}
+
+.event-header h3{
+    font-family: 'Aleo-Regular';
+    color: #fff;
+    font-size: 26px;
+    padding: 10px 0;
+    display: block;
+    text-transform: capitalize;
+    margin: 0;
+    font-weight: bold;
+}
+
+.event-header .prime-event .event-date{
+    font-family: 'Aleo-Regular';
+    color: #fff;
+    font-size: 28px;
+    border: 1px solid #333;
+    border-left: 0;
+    border-right: 0;
+    padding: 10px 0;
+    display: block;
+    width: 30%;
+    margin: 30px auto 0;
+}
+
+.event-header .prime-event .event-time{
+    display: block;
+    font-size: 22px;
+    font-family: 'Aleo-Regular';
+    color: #fff;
+}
+
+.event-header .prime-event a{
+    display: inline-block;
+    margin: auto;
+    background: #FC6334;
+    color: #fff;
+    padding: 10px 40px;
+    font-size: 16px;
+    text-transform: capitalize;   
+    margin: 80px 0 60px;
+}
+
+.event-header .scroller a {
+    display: inline-block;
+    color: #fff;
+    font-size: 25px;
+    border: 1px solid #FC6334;
+    border-radius: 0;
+    width: 30px;
+    height: 40px;
+    margin: 10px 0 0;
+    transition: 0.5s;
+    position: relative;
+}
+
+.event-header .scroller a img{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    left: 50%;
+    top: 50%;
+}
+
+.event-header .scroller p{
+    color: #FC6334;
+    text-transform: uppercase;
+    font-family: 'Raleway-Regular';
+    font-size: 10px;
+    text-align: center;
+}
+
+.spring-training{
+    padding-top: 40px;
+}
+
+.bold-head{
+    font-family: 'Raleway-ExtraBold';
+    background: #FC6334;
+    color: #fff;
+    padding: 25px 0 25px 100px;
+    font-size: 30px;
+    margin-left: -50px;
+    text-transform: capitalize;
+}
+
+.spring-training h4{
+    display: block;
+    font-size: 22px;
+    font-family: 'SourceSansPro-Regular';
+    color: #FC6334;
+    text-transform: capitalize;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.spring-training h5{
+    font-family: 'Raleway-Regular';
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.spring-training .event-date {
+    font-family: 'Aleo-Regular';
+    color: #fff;
+    font-size: 22px;
+    padding: 15px 0;
+    display: block;
+    text-transform: capitalize;
+    margin: 20px 0;
+    font-weight: bold;
+    border: 1px solid #666;
+    border-left: 0;
+    border-right: 0;
+    width: 70%;
+}
+
+.event-header p{
+    padding: 0;
+    font-family: 'SourceSansPro-Regular';
+    font-size: 14px;
+    color: #ccc;
+    text-align: justify;
+}
+
+.title-event{
+    color: #000;
+    text-transform: capitalize;
+    font-size: 25px;
+    display: block;
+    font-weight: bold;
+}
+
+.coach-descrp{
+    padding: 40px 0 40px 100px;
+}
+
+.coach-name{
+    font-family: 'Raleway-ExtraBold';
+    display: block;
+    color: #FC6334;
+    text-transform: capitalize;
+    font-size: 40px;
+    margin: 50px 0 0;
+}
+
+.coach-activity{
+    display: block;
+    font-family: 'Raleway-Regular';
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+}
+
+.coaches p, .coaches ul li{
+    padding: 0;
+    font-family: 'SourceSansPro-Regular';
+    font-size: 14px;
+    color: #999;
+    line-height: 20px;
+}
+
+.coach-descrp ul{
+    padding-left: 30px;
+    list-style-type: disc;
+    margin-top: 20px;
+}
+
+.coaches strong{
+    display: block;
+    color: #666;
+}
+
+.coaches .item a{
+    font-family: 'SourceSansPro-Regular';
+    font-size: 16px;
+    color: #fff;
+    background: #FC6334;
+    display: inline-block;
+    text-transform: capitalize;
+    padding: 8px 40px;
+    border-radius: 20px;
+    margin: 40px 0;
+}
+
+.coach-img img{
+    height: 100%;
+}
+
+.business .dark-bg{
+    background: #636363;
+    z-index: 9;
+}
+
+.business-img{
+    position: relative;
+    display: flex;
+}
+
+.business-img img{
+   width: 100%
+}
+
+.business-img .transparent-dark{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.business-title{
+    font-family: 'Raleway-Regular';
+    position: absolute;
+    color: #fff;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    font-size: 24px;
+}
+
+.business-title p{
+    margin: 0;
+    line-height: 50px;
+}
+
+.business-title strong{
+    text-transform: uppercase;
+    font-family: 'Raleway-ExtraBold';
+    font-size: 80px;
+}
+
+.business-descr{
+    color: #fff;
+    font-family: 'Raleway-Regular';
+    padding: 30px 20px 10px 50px;
+}
+
+.business-descr p{
+    font-family: 'SourceSansPro-Regular';
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.business-descr a{
+    display: inline;
+    color: #FC6334;
+    text-decoration: underline;
+}   
+
+.business-descr strong{
+    font-family: 'Aleo-Regular';
+    font-size: 20px;
+    margin: 30px 0 10px;
+    display: block;
+    font-weight: normal;
+}
+
+.faq .bold-head{
+    margin-left: 50px;
+    text-align: right;
+    padding-right: 100px;
+}
+
+.faq h4 {
+    display: block;
+    font-size: 22px;
+    font-family: 'SourceSansPro-Regular';
+    color: #FC6334;
+    text-transform: capitalize;
+    font-size: 40px;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+
+.faq h5 {
+    font-family: 'Raleway-Regular';
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.faq .accordion h3{
+    border: 1px solid #fff;
+    font-family: 'Aleo-Regular';
+    font-size: 16px;
+    font-weight: bold;
+    padding: 20px 10px;
+    margin: 5px 0;
+    outline: none;
+}
+
+.faq .accordion h3.ui-state-active{
+    border: 1px solid #FC6334;
+}
+
+.register a{
+    font-family: 'SourceSansPro-Regular';
+    font-size: 18px;
+    color: #fff;
+    background: #FC6334;
+    display: inline-block;
+    text-transform: capitalize;
+    padding: 8px 60px;
+    border-radius: 24px;
+    margin: 40px 0;
+}
+
+/*****************Carousel******************/
+
+/* Control buttons  */
+#quote-carousel .carousel-control
+{
+  background: none;
+  color: #222;
+  font-size: 2.3em;
+  text-shadow: none;
+  width: auto;
+}
+/* Previous button  */
+#quote-carousel .carousel-control.left 
+{
+  left: 25px;
+}
+/* Next button  */
+#quote-carousel .carousel-control.right 
+{
+  right: 25px;
+}
+#quote-carousel .carousel-control.right img{
+    float: right;
+}
+@media (max-width: 768px) { 
+    
+    #quote-carousel .carousel-indicators {
+        bottom: -20px !important;  
+    }
+    #quote-carousel .carousel-indicators li {
+        display: inline-block;
+        margin: 0px 5px;
+        width: 15px;
+        height: 15px;
+    }
+    #quote-carousel .carousel-indicators li.active {
+        margin: 0px 5px;
+        width: 20px;
+        height: 20px;
+    }
+}
+/**************************************************************/
+
+/*********************Footer**************************/
 footer{
     background: url('images/map.jpg') no-repeat fixed;
     background-size: cover;
