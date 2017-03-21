@@ -48,10 +48,10 @@
             <div class="col-md-12">
                 <div class="navigation">
                     <ul>
-                        <li><a href="#">home</a></li>
-                        <li class="active"><a href="#">about us</a></li>
-                        <li><a href="#">events calendar</a></li>
-                        <li><a href="#">learning resources</a></li>
+                       <li><a href="<?php echo site_url();?>">home</a></li>
+                        <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
+                        <li><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                 </div>
                 <div class="mobile-menu">
@@ -62,10 +62,10 @@
                   </a>
                   <div class="main-menu">
                     <ul>
-                        <li><a href="#">home</a></li>
-                        <li class="active"><a href="#">about us</a></li>
-                        <li><a href="#">events calendar</a></li>
-                        <li><a href="#">learning resources</a></li>
+                       <li><a href="<?php echo site_url();?>">home</a></li>
+                        <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
+                        <li><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                   </div>
                 </div>
@@ -76,11 +76,7 @@
             	<div class="prime-event">
             		<span class="event-date">wednesday 5th april</span>
             		<br>
-            		<h1>spring training</h1>
-            		<h2>for wedding <span>professionals</span></h2>
-            		<span class="event-time">9a.m. to 4p.m.</span>
-            		<h3>kick comedy theatre in westport</h3>
-            		<a href="#">join the training</a>
+            		<h1>Services</h1>
             	</div>
             </div>
         </div>

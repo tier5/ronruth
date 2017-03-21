@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="row">
-            <?php if(!is_page( 'checkout' )){?>
+            <?php if(!is_page( 'checkout', 'my-account')){?>
             <div class="col-md-8">
                 <div class="banner-txt">
                     <?php dynamic_sidebar('sidebar-4');?>

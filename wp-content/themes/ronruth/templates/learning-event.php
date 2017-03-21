@@ -65,8 +65,8 @@
                     <span class="span bar bottom" style="background-color: #fff;">&nbsp;</span>
                   </a>
                   <div class="main-menu">
-                    <ul>
-                        <li><a href="<?php echo site_url();?>">home</a></li>
+                   <ul>
+                       <li><a href="<?php echo site_url();?>">home</a></li>
                         <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
                         <li><a href="<?php echo site_url();?>">events calendar</a></li>
                         <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
