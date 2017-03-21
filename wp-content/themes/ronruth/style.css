@@ -899,7 +899,7 @@ a.carousel-control{
     text-transform: uppercase;
 }
 
-.product-price span.price{
+.product-price span.amount, .product-price span.woocommerce-Price-currencySymbol{
     color: #FC6334;
     font-size: 40px;
 }
@@ -910,6 +910,7 @@ a.carousel-control{
 }
 
 .product-price .shipping p{
+    font-family: 'SourceSansPro-Regular';
     font-size: 14px;
     margin-bottom: 0;
 }
@@ -943,16 +944,64 @@ a.carousel-control{
     padding: 10px 40px;
 }
 
-.review h4{
+.woocommerce div.product form.cart .button{
+    background: #FC6334;
+    border: 1px solid #FC6334;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 10px 40px;
+    border-radius: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a{
+    font-weight: normal;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    border-bottom-color: #ccc;
+}
+
+.review h4, .woocommerce-Tabs-panel h2{
     color: #FC6334;
     font-size: 20px;
 }
 
-.review .each-review{
+.review .each-review, .woocommerce-Tabs-panel p{
     font-family: 'SourceSansPro-Regular';
     margin: 20px 0;
     padding-left: 20px;
+    font-size: 15px;
+    color: #666;
+}
+
+.woocommerce #reviews h3{
+     font-family: 'SourceSansPro-Regular';
+    text-align: left;
     font-size: 18px;
+    letter-spacing: 0;
+}
+
+.comment-respond form{
+    background: #f1f1f1;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.comment-respond form input{
+    width: 100%;
+}
+
+.woocommerce #review_form #respond .form-submit input {
+    background: #FC6334;
+    border: 1px solid #FC6334;
+    color: #fff;
+    font-size: 14px;
+    margin-top: 20px;
+    padding: 10px 40px;
+    border-radius: 0;
 }
 
 .review .each-review strong{
@@ -961,6 +1010,24 @@ a.carousel-control{
 
 .review .each-review p{
     color: #666;
+}
+
+#slider1_container a{
+    text-align: center;
+}
+
+.woocommerce-page div.product div.summary{
+    float: left !important;
+     width: 50% !important;
+}
+
+#slider1_container{
+    width: 50% !important;
+}
+
+.woocommerce-images {
+    float: left !important;
+   
 }
 
 /*********************Event Page**********************/
@@ -1532,6 +1599,14 @@ footer a:hover{
         padding: 130px 0;
     }
 
+    #slider1_container {
+        width: 52% !important;
+    }
+
+    .woocommerce-page div.product div.summary {
+        width: 48% !important;
+    }
+
 }
 
 @media screen and (max-width: 991px){
@@ -1565,6 +1640,15 @@ footer a:hover{
 
 
     .buy-form .form-control {
+        width: 100%;
+    }
+
+
+    #slider1_container, .woocommerce-page div.product div.summary {
+        width: 100% !important;
+    }
+
+    .bestselling-details h3 {
         width: 100%;
     }
 
@@ -1603,6 +1687,7 @@ footer a:hover{
     .product-img .item img {
         width: 200px;
     }
+
 }
 
 @media screen and (max-width: 767px){
