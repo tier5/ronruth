@@ -16,6 +16,7 @@
 
 	<link href="<?php echo get_template_directory_uri();?>/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri();?>/fonts/font-awesome/css/font-awesome.min.css" type="text/css">
+    <link href="<?php echo get_template_directory_uri();?>/css/jquery-ui.css" rel="stylesheet" type="text/css">
     
 
 	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js" ></script>
@@ -50,8 +51,8 @@
                     <ul>
                        <li><a href="<?php echo site_url();?>">home</a></li>
                         <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
-                        <li><a href="<?php echo site_url();?>">events calendar</a></li>
-                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
+                        <li class="active"><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                 </div>
                 <div class="mobile-menu">
@@ -74,138 +75,58 @@
         <div class="row">
             <div class="col-md-12">
             	<div class="prime-event">
-            		<span class="event-date">wednesday 5th april</span>
-            		<br>
+            		<!-- <span class="event-date">wednesday 5th april</span>
+            		<br> -->
             		<h1>Services</h1>
             	</div>
             </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-md-12">
             	<div class="scroller">
-            		<a href="#">
+            		<a href="#coaches">
             			<img src="<?php echo get_template_directory_uri();?>/images/arrow-down.png" class="img-responsive" alt="arrow-down">
             		</a>
             		<p>scroll down</p>
             	</div>
             </div>
-        </div>
+        </div> -->
         <div class="clear">&nbsp;</div>
         <div class="row">
-            <div class="col-md-6">
-                <div class="row">
-                    <img src="<?php echo get_template_directory_uri();?>/images/event1.jpg" class="img-responsive" alt="event">
-                </div>
+            <div class="col-md-6 col-sm-4">
+                <img src="<?php echo get_template_directory_uri();?>/images/event1.jpg" class="img-responsive" alt="event">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-8">
                 <div class="spring-training text-left">
-                    <div class="bold-head">About</div>
+                    <div class="bold-head">featured service</div>
                     <h4>spring training</h4>
                     <h5>business training</h5>
                     <span class="event-date">5th april</span>
                     <p>The heat of the wedding season is almost upon us and wedding professionals, just like you, will be swinging for the fences to make it a championship season for their businesses. But, before taking to your field of dreams---you’ll want to sharpen your game, your talent and your skills with a fun day of business training that will make you the heavy hitting wedding professional that every bride & groom wants on their team.</p>
+
                 </div> 
             </div>
         </div>
     </div>
 </header>
-<section class="coaches">
+<section class="services-scroll text-center">
     <div class="container-fluid">
-        <div class='row'>
-            <div class="col-md-12 nopadding">
-                <div class="carousel slide" data-ride="carousel" id="quote-carousel">
-                    <!-- Carousel Slides / Quotes -->
-                    <div class="carousel-inner">
-                      <!-- Quote 1 -->
-                        <div class="item active">
-                            <div class="col-sm-6">
-                                <div class="coach-descrp">
-                                    <span class="title-event">spring training coaches</span>
-                                    <span class="coach-name">Peter Merry, WED®</span>
-                                    <span class="coach-activity">pitching coach</span>
-                                    <p>Peter is a noted wedding business sales trainer and the famed author of “The Best Wedding Reception...Ever!” Peter will help you improve the pitch you make to potential customers with two amazing presentations, “Better Consultations Bring Better Bookings” and “Showcasing Your V-A-L-U-E.”</p>
-                                    <a href="#">know more</a>
-                                    <strong>You'll learn how to:</strong>
-                                    <ul>
-                                        <li>Connect more effectively with potential clients during a sales consultation.</li>
-                                        <li>Communicate your value in a manner that makes you the most attractive option.  </li>
-                                        <li>Develop a game plan that will bring more confidence to your sales conversations.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="row">
-                                    <div class="coach-img">
-                                        <img src="<?php echo get_template_directory_uri();?>/images/event2.jpg" class="img-responsive" alt="event">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <div class="coach-descrp">
-                                    <span class="title-event">spring training coaches</span>
-                                    <span class="coach-name">Peter Merry, WED®</span>
-                                    <span class="coach-activity">pitching coach</span>
-                                    <p>Peter is a noted wedding business sales trainer and the famed author of “The Best Wedding Reception...Ever!” Peter will help you improve the pitch you make to potential customers with two amazing presentations, “Better Consultations Bring Better Bookings” and “Showcasing Your V-A-L-U-E.”</p>
-                                    <a href="#">know more</a>
-                                    <strong>You'll learn how to:</strong>
-                                    <ul>
-                                        <li>Connect more effectively with potential clients during a sales consultation.</li>
-                                        <li>Communicate your value in a manner that makes you the most attractive option.  </li>
-                                        <li>Develop a game plan that will bring more confidence to your sales conversations.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="row">
-                                    <div class="coach-img">
-                                        <img src="<?php echo get_template_directory_uri();?>/images/event2.jpg" class="img-responsive" alt="event">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="col-sm-6">
-                                <div class="coach-descrp">
-                                    <span class="title-event">spring training coaches</span>
-                                    <span class="coach-name">Peter Merry, WED®</span>
-                                    <span class="coach-activity">pitching coach</span>
-                                    <p>Peter is a noted wedding business sales trainer and the famed author of “The Best Wedding Reception...Ever!” Peter will help you improve the pitch you make to potential customers with two amazing presentations, “Better Consultations Bring Better Bookings” and “Showcasing Your V-A-L-U-E.”</p>
-                                    <a href="#">know more</a>
-                                    <strong>You'll learn how to:</strong>
-                                    <ul>
-                                        <li>Connect more effectively with potential clients during a sales consultation.</li>
-                                        <li>Communicate your value in a manner that makes you the most attractive option.  </li>
-                                        <li>Develop a game plan that will bring more confidence to your sales conversations.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="col-sm-6">
-                                <div class="row">
-                                    <div class="coach-img">
-                                        <img src="<?php echo get_template_directory_uri();?>/images/event2.jpg" class="img-responsive" alt="event">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    
-                    <!-- Carousel Buttons Next/Prev -->
-                    <a data-slide="prev" href="#quote-carousel" class="left carousel-control">
-                        <img src="<?php echo get_template_directory_uri();?>/images/arrow-left.png" class="img-responsive" alt="arrow-left">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="scroller">
+                    <a href="#services">
+                        <img src="<?php echo get_template_directory_uri();?>/images/arrow-down.png" class="img-responsive" alt="arrow-down">
                     </a>
-                    <a data-slide="next" href="#quote-carousel" class="right carousel-control">
-                        <img src="<?php echo get_template_directory_uri();?>/images/arrow-right.png" class="img-responsive" alt="arrow-right">
-                    </a>
+                    <p>scroll down</p>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
 </section>
-<section class="business">
+<section class="business" id="services">
     <div class="container-fluid">
         <div class="row row-eq-height">
-            <div class="col-md-6">
+            <div class="col-md-6 col-sm-4">
                 <div class="row">
                     <div class="business-img">
                         <div class="transparent-dark"></div>
@@ -217,9 +138,63 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 dark-bg">
+            <div class="col-md-6 col-sm-8 dark-bg">
                 <div class="row">
-                    <div class="bold-head">extra benefits</div>
+                    <div class="bold-head">Service 1</div>
+                    <div class="business-descr">
+                        <strong>Players Are Winners</strong>
+                        <p>This day of spring training is an opportunity for every wedding professionals to make a notable improvement in their business. But that can’t happen if you’re sitting on the bench. Your participation is the only way to make this a winning event.</p>
+                        <br>
+                        <p>Every wedding professional in attendance will receive a $20.00 registration discount to attend the <a href="#">Wedding MBA Conference</a> in Las Vegas, October 2 - 4, 2017.</p>
+                        <strong>Come To Learn. Laugh. Play. Grow.</strong>
+                        <p>What's better than attending a conference like Wedding MBA? How about enjoying a fun day of highly educational content right here in Kansas City, all designed to help you increase sales, referrals and revenue? As a member of a small team of local wedding pros, you’ll learn, laugh, play and grow your business with the helpful guidance of two legendary coaches known for helping wedding professionals make the big plays.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-eq-height">
+            <div class="col-md-6 col-sm-8 dark-bg left-service">
+                <div class="row">
+                    <div class="bold-head">Service 2</div>
+                    <div class="business-descr">
+                        <strong>Players Are Winners</strong>
+                        <p>This day of spring training is an opportunity for every wedding professionals to make a notable improvement in their business. But that can’t happen if you’re sitting on the bench. Your participation is the only way to make this a winning event.</p>
+                        <br>
+                        <p>Every wedding professional in attendance will receive a $20.00 registration discount to attend the <a href="#">Wedding MBA Conference</a> in Las Vegas, October 2 - 4, 2017.</p>
+                        <strong>Come To Learn. Laugh. Play. Grow.</strong>
+                        <p>What's better than attending a conference like Wedding MBA? How about enjoying a fun day of highly educational content right here in Kansas City, all designed to help you increase sales, referrals and revenue? As a member of a small team of local wedding pros, you’ll learn, laugh, play and grow your business with the helpful guidance of two legendary coaches known for helping wedding professionals make the big plays.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4">
+                <div class="row">
+                    <div class="business-img">
+                        <div class="transparent-dark"></div>
+                        <span class="business-title">
+                            <p>Business<strong>&</strong></p> 
+                            <p><strong>idea</strong></p>
+                        </span>
+                        <img src="<?php echo get_template_directory_uri();?>/images/event3.jpg" class="img-responsive" alt="event">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row row-eq-height">
+            <div class="col-md-6 col-sm-4">
+                <div class="row">
+                    <div class="business-img">
+                        <div class="transparent-dark"></div>
+                        <span class="business-title">
+                            <p>Business<strong>&</strong></p> 
+                            <p><strong>idea</strong></p>
+                        </span>
+                        <img src="<?php echo get_template_directory_uri();?>/images/event3.jpg" class="img-responsive" alt="event">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-8 dark-bg">
+                <div class="row">
+                    <div class="bold-head">Service 3</div>
                     <div class="business-descr">
                         <strong>Players Are Winners</strong>
                         <p>This day of spring training is an opportunity for every wedding professionals to make a notable improvement in their business. But that can’t happen if you’re sitting on the bench. Your participation is the only way to make this a winning event.</p>
@@ -233,11 +208,19 @@
         </div>
     </div>
 </section>
-
+<section class="register text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="#">Register</a>
+            </div>
+        </div>
+    </div>
+</section>
 <section class="business faq">
     <div class="container-fluid">
         <div class="row row-eq-height">
-            <div class="col-md-6 dark-bg">
+            <div class="col-md-6 col-sm-12 dark-bg">
                 <div class="row">
                     <div class="bold-head">faq</div>
                     <div class="business-descr">
@@ -265,7 +248,7 @@ To reserve seats for you and a guest, simply click the "Buy Now" button below. Y
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 hidden-sm hidden-xs">
                 <div class="row">
                     <div class="business-img">
                         <img src="<?php echo get_template_directory_uri();?>/images/event4.jpg" class="img-responsive" alt="event">
@@ -275,14 +258,19 @@ To reserve seats for you and a guest, simply click the "Buy Now" button below. Y
         </div>
     </div>
 </section>
-<section class="register text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <a href="#">Register</a>
-            </div>
-        </div>
-    </div>
-</section>
 
+<script type="text/javascript">
+    jQuery(function ($){
+        $('.scroller a').click(function() {
+            var target = $(this.hash);
+            target = target.length ? target : $('[name=' + this.hash.substr(1) +']');
+            if (target.length) {
+                $('html,body').animate({
+                  scrollTop: target.offset().top
+                }, 1000);
+                return false;
+            }
+        });
+    });
+</script>
 <?php get_footer();?>

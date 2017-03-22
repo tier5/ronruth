@@ -137,8 +137,10 @@ a:hover, a:focus{
 .row-eq-height {
   display: -webkit-box;
   display: -webkit-flex;
+  display: -moz-box;
   display: -ms-flexbox;
-  display:         flex;
+  display:         flex;   
+    
 }
 
 .home-header{
@@ -686,6 +688,10 @@ header.about-header p {
     background-size: 100% 100%;
     color: #fff;
     text-align: center;
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
     padding: 80px 0 0;
 }
@@ -714,6 +720,10 @@ header.about-header p {
 }
 
 .about-block .each-block .row{
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -webkit-flex;     /* NEW - Chrome */
     display: flex;
 }
 
@@ -991,7 +1001,9 @@ a.carousel-control{
 }
 
 .comment-respond form input{
-    width: 100%;
+    width: 50%;
+    height: 40px;
+    padding-left: 10px;
 }
 
 .woocommerce #review_form #respond .form-submit input {
@@ -1002,6 +1014,22 @@ a.carousel-control{
     margin-top: 20px;
     padding: 10px 40px;
     border-radius: 0;
+    height: 40px;
+    width: auto;
+}
+
+.woocommerce #review_form #respond label {
+    vertical-align: top;
+    width: 100px;
+}
+
+.woocommerce .woocommerce-Reviews #review_form #respond textarea {
+    width: 50%;
+}
+
+.woocommerce #review_form #respond p.stars{
+    display: inline-block;
+    padding: 0;
 }
 
 .review .each-review strong{
@@ -1105,7 +1133,11 @@ a.carousel-control{
     margin: 80px 0 60px;
 }
 
-.event-header .scroller a {
+.services-scroll{
+    background: #000;
+}
+
+.services-scroll .scroller a {
     display: inline-block;
     color: #fff;
     font-size: 25px;
@@ -1118,14 +1150,14 @@ a.carousel-control{
     position: relative;
 }
 
-.event-header .scroller a img{
+.services-scroll .scroller a img{
     position: absolute;
     transform: translate(-50%,-50%);
     left: 50%;
     top: 50%;
 }
 
-.event-header .scroller p{
+.services-scroll .scroller p{
     color: #FC6334;
     text-transform: uppercase;
     font-family: 'Raleway-Regular';
@@ -1137,6 +1169,7 @@ a.carousel-control{
     padding-top: 40px;
 }
 
+
 .bold-head{
     font-family: 'Raleway-ExtraBold';
     background: #FC6334;
@@ -1145,6 +1178,20 @@ a.carousel-control{
     font-size: 30px;
     margin-left: -50px;
     text-transform: capitalize;
+    width: 100%
+}
+
+
+.left-service{
+    z-index: 9;
+}
+
+.left-service .bold-head{
+    margin-right: -50px;
+    text-align: right;
+    padding-right: 100px;
+    margin-left: 50px;
+    width: auto;
 }
 
 .spring-training h4{
@@ -1259,11 +1306,15 @@ a.carousel-control{
 
 .business-img{
     position: relative;
+    display: -webkit-box;      
+    display: -moz-box;         
+    display: -ms-flexbox;     
+    display: -webkit-flex;    
     display: flex;
 }
 
 .business-img img{
-   width: 100%
+   width: 100%;
 }
 
 .business-img .transparent-dark{
@@ -1323,11 +1374,15 @@ a.carousel-control{
     display: block;
     font-weight: normal;
 }
+.faq{
+    border-bottom: 5px solid #000;
+}
 
 .faq .bold-head{
-    margin-left: 50px;
+    margin-right: -50px;
     text-align: right;
     padding-right: 100px;
+    margin-left: 50px;
 }
 
 .faq h4 {
@@ -1356,10 +1411,35 @@ a.carousel-control{
     padding: 20px 10px;
     margin: 5px 0;
     outline: none;
+    background: none;
+    color: #fff;
+    border-radius: 0;
+}
+
+.faq .accordion h3 span{
+    display: none;
 }
 
 .faq .accordion h3.ui-state-active{
     border: 1px solid #FC6334;
+    border-bottom: 0;
+    margin-bottom: 0;
+}
+
+.ui-accordion .ui-accordion-content{
+    background: none;
+    color: #fff;
+    border-radius: 0;
+}
+
+.faq .accordion .ui-accordion-content-active{
+    border: 1px solid #FC6334;
+    border-top: 0;
+    padding: 10px;
+}
+
+.register{
+    background: #000;
 }
 
 .register a{
@@ -1652,6 +1732,34 @@ footer a:hover{
         width: 100%;
     }
 
+    .faq .bold-head, .bold-head, .left-service .bold-head {
+        margin-right: 0;
+        margin-left: 0;
+        padding: 10px;
+        text-align: left;
+        font-size: 24px;
+    }
+
+    .spring-training {
+        padding-top: 0;
+    }
+
+    .business-img{
+        display: block;
+    }
+
+    .business .row-eq-height{
+        background: #636363;
+    }
+
+    .business-descr {
+        padding: 10px 20px 10px 10px;
+    }
+
+    .business-descr strong {
+        margin: 0;
+    }
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 991px){
@@ -1686,6 +1794,14 @@ footer a:hover{
 
     .product-img .item img {
         width: 200px;
+    }
+
+    .event-header h1 {
+        font-size: 60px;
+    }
+
+    .business-descr p {
+        font-size: 12px;
     }
 
 }
@@ -1812,6 +1928,10 @@ footer a:hover{
 
     .bestselling-details h3 {
         margin: 0 0 20px;
+    }
+
+    .event-header h1 {
+        font-size: 40px;
     }
 
 }
