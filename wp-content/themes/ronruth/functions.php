@@ -466,6 +466,15 @@ function wpb_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+	register_sidebar( array(
+		'name' => __( 'Service Page Sidebar', 'wpb' ),
+		'id' => 'sidebar-7',
+		'description' => __( 'The Service Page Sidebar appears on the Service page except the Service page template', 'wpb' ),
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget' => '</aside>',
+		'before_title' => '<h3 class="widget-title">',
+		'after_title' => '</h3>',
+	) );
 	}
 
 add_action( 'widgets_init', 'wpb_widgets_init' );
@@ -516,10 +525,11 @@ function custom_post_type() {
 		'description'         => __( 'Service news and reviews', 'twentyfifteen' ),
 		'labels'              => $labels,
 		// Features this CPT supports in Post Editor
+
 		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
 		// You can associate this CPT with a taxonomy or custom taxonomy. 
 		//'taxonomies'          => array( 'genres' ),
-		'taxonomies'          => array( 'genres', 'category' ),
+		'taxonomies'          => array( 'genres', 'category', 'featured' ),
 		/* A hierarchical CPT is like Pages and can have
 		* Parent and child items. A non-hierarchical CPT
 		* is like Posts.
@@ -535,7 +545,8 @@ function custom_post_type() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'capability_type'     => 'page',
+		'rewrite' => array('slug' => 'services', 'with_front' => false),
+        'capability_type' => 'post',
 	);
 	
 	// Registering your Custom Post Type
@@ -608,3 +619,4 @@ function custom_post_type2() {
 */
 
 add_action( 'init', 'custom_post_type2', 0 );
+

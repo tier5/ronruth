@@ -51,7 +51,7 @@
                     <ul>
                        <li><a href="<?php echo site_url();?>">home</a></li>
                         <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
-                        <li class="active"><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li class="active"><a href="<?php echo site_url();?>/service">events calendar</a></li>
                         <li><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                 </div>
@@ -65,7 +65,7 @@
                     <ul>
                        <li><a href="<?php echo site_url();?>">home</a></li>
                         <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
-                        <li><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li><a href="<?php echo site_url();?>/service">events calendar</a></li>
                         <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                   </div>
@@ -93,19 +93,45 @@
         </div> -->
         <div class="clear">&nbsp;</div>
         <div class="row">
-            <div class="col-md-6 col-sm-4">
-                <img src="<?php echo get_template_directory_uri();?>/images/event1.jpg" class="img-responsive" alt="event">
+                   <?php $args = array(
+                    'post_type' => 'services',
+                    'numberposts' => 1,
+                    'meta_query' => array(
+                        array(
+                            'key' => '_is_ns_featured_post',
+                            'value' => 'yes',
+                            'compare' => 'NOT LIKE'
+                        )
+                    )
+
+                 );
+        $the_query = new WP_Query( array( 'post_type' => 'services', 'numberposts' => 1,'meta_key' => '_is_ns_featured_post', 'meta_value' => 'yes' ) );
+                if ( $the_query->have_posts() ):
+    while ( $the_query->have_posts() ) : $the_query->the_post(); 
+        $thumbnail = get_the_post_thumbnail_url();
+    ?>
+         <div class="col-md-6 col-sm-4">
+                <img src="<?php echo $thumbnail;?>" class="img-responsive" alt="event">
             </div>
             <div class="col-md-6 col-sm-8">
                 <div class="spring-training text-left">
                     <div class="bold-head">featured service</div>
-                    <h4>spring training</h4>
-                    <h5>business training</h5>
-                    <span class="event-date">5th april</span>
-                    <p>The heat of the wedding season is almost upon us and wedding professionals, just like you, will be swinging for the fences to make it a championship season for their businesses. But, before taking to your field of dreams---you’ll want to sharpen your game, your talent and your skills with a fun day of business training that will make you the heavy hitting wedding professional that every bride & groom wants on their team.</p>
+             
+                    <h4><?php echo get_the_title();?></h4>
+                    <!--<h5>business training</h5>
+                    <span class="event-date">5th april</span>-->
+                    <p><?php echo get_the_content();?>.</p>
 
                 </div> 
             </div>
+        <?php endwhile; ?>
+    <!-- end of the loop -->
+
+    <!-- pagination here -->
+
+    <?php wp_reset_postdata(); ?>
+<?php endif; ?>
+           
         </div>
     </div>
 </header>
@@ -125,7 +151,30 @@
 </section>
 <section class="business" id="services">
     <div class="container-fluid">
+        <?php global $post;
+
+$args2 = array('post_type' => 'services',
+                    'numberposts' => 4,
+                    'meta_query' => array(
+                        array(
+                            'key' => '_is_ns_featured_post',
+                            'value' => 'yes',
+                            'compare' => 'NOT LIKE'
+                        )
+                    )
+
+                 );
+//$q = new WP_Query( $args2);
+$q = new WP_Query( array( 'post_type' => 'services', 'numberposts' => 4, 'order' => 'ASC' ) );
+
+if ( $q->have_posts() ) {
+    $count = 0;
+    while ( $q->have_posts() ) {
+    $q->the_post(); 
+    $thumbnail2 = get_the_post_thumbnail_url();
+    ?>
         <div class="row row-eq-height">
+            <?php if(++$count%2 != 0){ ?>
             <div class="col-md-6 col-sm-4">
                 <div class="row">
                     <div class="business-img">
@@ -134,25 +183,51 @@
                             <p>Business<strong>&</strong></p> 
                             <p><strong>idea</strong></p>
                         </span>
-                        <img src="<?php echo get_template_directory_uri();?>/images/event3.jpg" class="img-responsive" alt="event">
+                        <?php 
+                            if ( has_post_thumbnail() ) { ?>
+                        <img src="<?php echo $thumbnail2;?>" class="img-responsive" alt="event">
+                        <?php } ?>
                     </div>
                 </div>
             </div>
             <div class="col-md-6 col-sm-8 dark-bg">
                 <div class="row">
-                    <div class="bold-head">Service 1</div>
+                    <div class="bold-head"><?php echo get_the_title();?></div>
                     <div class="business-descr">
-                        <strong>Players Are Winners</strong>
-                        <p>This day of spring training is an opportunity for every wedding professionals to make a notable improvement in their business. But that can’t happen if you’re sitting on the bench. Your participation is the only way to make this a winning event.</p>
-                        <br>
-                        <p>Every wedding professional in attendance will receive a $20.00 registration discount to attend the <a href="#">Wedding MBA Conference</a> in Las Vegas, October 2 - 4, 2017.</p>
-                        <strong>Come To Learn. Laugh. Play. Grow.</strong>
-                        <p>What's better than attending a conference like Wedding MBA? How about enjoying a fun day of highly educational content right here in Kansas City, all designed to help you increase sales, referrals and revenue? As a member of a small team of local wedding pros, you’ll learn, laugh, play and grow your business with the helpful guidance of two legendary coaches known for helping wedding professionals make the big plays.</p>
+                        <?php the_content();?>
                     </div>
                 </div>
             </div>
+            <?php } else {?>
+            <div class="col-md-6 col-sm-8 dark-bg left-service">
+                <div class="row">
+                    <div class="bold-head"><?php echo get_the_title();?></div>
+                    <div class="business-descr">
+                         <?php the_content();?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-4">
+                <div class="row">
+                    <div class="business-img">
+                        <div class="transparent-dark"></div>
+                        <span class="business-title">
+                            <p>Business<strong>&</strong></p> 
+                            <p><strong>idea</strong></p>
+                        </span>
+                        <?php 
+                            if ( has_post_thumbnail() ) { ?>
+                        <img src="<?php echo $thumbnail2;?>" class="img-responsive" alt="event">
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+            <?php } ?>
         </div>
-        <div class="row row-eq-height">
+        <?php }
+    wp_reset_postdata();
+}?>
+        <!--<div class="row row-eq-height">
             <div class="col-md-6 col-sm-8 dark-bg left-service">
                 <div class="row">
                     <div class="bold-head">Service 2</div>
@@ -205,16 +280,16 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 <section class="register text-center">
     <div class="container">
-        <div class="row">
+        <!--<div class="row">
             <div class="col-md-12">
                 <a href="#">Register</a>
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 <section class="business faq">
@@ -222,27 +297,17 @@
         <div class="row row-eq-height">
             <div class="col-md-6 col-sm-12 dark-bg">
                 <div class="row">
-                    <div class="bold-head">faq</div>
+                    <div class="bold-head">Have Any Questions</div>
                     <div class="business-descr">
-                        <h4>event faqs</h4>
-                        <h5>find your answers</h5>
                         <div id="accordion" class="accordion">
-                          <h3>How Many People Can I Bring?</h3>
-                          <div>
-                            <p>Unlike the real game of baseball, the size of your team has no limits. Anybody who wants to play can join us. Registration is only $25.00 for a 2-for-1 ticket, so feel free to bring along as many friends, co-workers or competitors as you’d like. </p>
-                          </div>
                           <h3>I Have Questions?</h3>
                           <div>
-                            <ul>
-                                <li>Call or text Peter Merry directly at (949) 584-5338</li>
-                                <li>Call or text Ron Ruth directly at (816) 224-4487</li>
-                                <li>Email Ron: Ron@RonRuth.com<br>Email Peter: Peter@PeterMerry.com</li>
-                            </ul>
-                          </div>
-                          <h3>How Do I Register?</h3>
-                          <div>
-                            <p>Registration fee is only $25.00 for a 2-for1 ticket.
-To reserve seats for you and a guest, simply click the "Buy Now" button below. You will be redirected to the PayPal website to complete your payment. Please contact Ron (Ron@RonRuth.com) to be invoiced for groups of 6 or more</p>
+                            <?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
+    <div id="secondary" class="widget-area" role="complementary">
+    <?php dynamic_sidebar( 'sidebar-5' ); ?>
+    </div>
+<?php endif; ?>
+                            
                           </div>
                         </div>
                     </div>
