@@ -1977,3 +1977,68 @@ sup {
     left: 125px;
     width: 450px;
 }
+
+
+
+/*23-03-17*/
+
+
+.input-text {border: 1px solid #ccc; padding: 9px 7px; border-radius: 0;}
+
+.woocommerce-billing-fields h3{color: #FC6334; border-bottom: 1px solid #ccc;}
+
+.woocommerce-shipping-fields{border: 3px solid #FC6334; padding: 10px; background: #F7F6F7;}
+.woocommerce-shipping-fields h3{color: #FC6334; border-bottom: 1px solid #ccc; margin-top: 0;}
+.woocommerce-shipping-fields h3 label.checkbox{display: inline-block; font-weight: 300;}
+
+.woocommerce-billing-fields label{font-weight: 300; color: #4d4d4d;}
+
+.woocommerce-billing-fields .select2-choice{border: 1px solid #ccc; padding: 3px 7px; border-radius: 0;}
+
+.entry-content {margin: 0 auto; width: 93%;}
+.entry-header {margin: 0 auto; width: 93%;}
+
+.woocommerce-checkout-payment#payment{background: none;}
+
+#place_order{background: #FD7534; padding: 15px 19px; border-radius: 0;}
+
+h3.order_review_heading{color: #FC6334; border-bottom: 1px solid #ccc; }
+
+#order_review table.woocommerce-checkout-review-order-table thead{background: #F7F6F7;}
+
+#add_payment_method #payment ul.payment_methods, .woocommerce-cart #payment ul.payment_methods, .woocommerce-checkout #payment ul.payment_methods
+{border-bottom: 1px solid #FD7534}
+
+h3#order_review_heading{color: #FC6334; border-bottom: 1px solid #ccc;}
+
+.images a {
+    width: 60%;
+    margin-left: 19%;
+}
+.images h1 {
+    text-align: center;
+}
+.event_content {
+    padding: 20px !important;
+}
+.event_title {
+    padding: 15px 20px !important;
+}
+.event_date {
+    padding: 10px 20px !important;
+} 
+div#rev_slider_1_1_wrapper {
+    height: 460px !important;
+}
+.fullwidthbanner-container .fullwidthabanner {
+    width: 650px !important;
+    height: 459px !important;
+    position: relative;
+}
+
+
+
+
+
+
+

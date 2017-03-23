@@ -23,7 +23,7 @@
     <?php
  }else{
 ?> 
-<header>
+<header class="home-header">
     
 <?php }?>
 
@@ -70,7 +70,7 @@
             </div>
         </div>
         <div class="row">
-            <?php if(!is_page( 'checkout', 'my-account')){?>
+            <?php if(!is_page( 'checkout', 'my-account', 'cart')){?>
             <div class="col-md-8">
                 <div class="banner-txt">
                     <?php dynamic_sidebar('sidebar-4');?>

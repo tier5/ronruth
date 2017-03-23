@@ -478,12 +478,14 @@ function wpb_widgets_init() {
 	}
 
 add_action( 'widgets_init', 'wpb_widgets_init' );
+
 add_filter('woocommerce_add_to_cart_redirect', 'themeprefix_add_to_cart_redirect');
 function themeprefix_add_to_cart_redirect() {
  global $woocommerce;
  $checkout_url = $woocommerce->cart->get_checkout_url();
  return $checkout_url;
 }
+
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_title', 5 );
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40 );
 add_action( 'woocommerce_single_product_summary', 'show_shipping', 35 );
@@ -605,7 +607,7 @@ function custom_post_type2() {
 		'has_archive'         => true,
 		'exclude_from_search' => false,
 		'publicly_queryable'  => true,
-		'capability_type'     => 'page',
+		'capability_type'     => 'post',
 	);
 	
 	// Registering your Custom Post Type
@@ -620,3 +622,58 @@ function custom_post_type2() {
 
 add_action( 'init', 'custom_post_type2', 0 );
 
+add_filter( 'add_to_cart_text', 'woo_custom_single_add_to_cart_text' );                // < 2.1
+add_filter( 'woocommerce_product_single_add_to_cart_text', 'woo_custom_single_add_to_cart_text' );  // 2.1 +
+  
+function woo_custom_single_add_to_cart_text() {
+  
+    return __( 'BUY NOW', 'woocommerce' );
+  
+}
+add_filter( 'add_to_cart_text', 'woo_custom_product_add_to_cart_text' );            // < 2.1
+add_filter( 'woocommerce_product_add_to_cart_text', 'woo_custom_product_add_to_cart_text' );  // 2.1 +
+  
+function woo_custom_product_add_to_cart_text() {
+  
+    return __( 'BUY NOW', 'woocommerce' );
+  
+}
+function pagination($pages = '', $range = 4)
+{
+	$showitems = ($range * 2)+1;
+
+	global $paged;
+	if(empty($paged)) $paged = 1;
+
+	if($pages == '')
+	{
+		global $wp_query;
+		$pages = $wp_query->max_num_pages;
+		if(!$pages)
+		{
+			$pages = 1;
+		}
+	}
+
+	if(1 != $pages)
+	{
+		echo "<div class=\"pagination\"><span>Page ".$paged." of ".$pages."</span>";
+		//&& $paged > $range+1 && $showitems < $pages
+		//&& $showitems < $pages
+		if($paged > 2 ) echo "<a href='".get_pagenum_link(1)."'>&laquo;</a>";
+		if($paged > 1 ) echo "<a href='".get_pagenum_link($paged - 1)."'>&lsaquo;</a>";
+
+		for ($i=1; $i <= $pages; $i++)
+		{
+			if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
+			{
+				echo ($paged == $i)? "<span class=\"current\">".$i."</span>":"<a href='".get_pagenum_link($i)."' class=\"inactive\">".$i."</a>";
+			}
+		}
+		//&& $showitems < $pages
+		//&&  $paged+$range-1 < $pages && $showitems < $pages
+		if ($paged < $pages ) echo "<a href=\"".get_pagenum_link($paged + 1)."\">&rsaquo;</a>";
+		if ($paged < $pages-1 ) echo "<a href='".get_pagenum_link($pages)."'>&raquo;</a>";
+		echo "</div>\n";
+	}
+}

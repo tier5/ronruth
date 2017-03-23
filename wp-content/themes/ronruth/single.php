@@ -9,40 +9,72 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-
+		 <div class="row">
+            <div class="col-md-12">
 		<?php
 		// Start the loop.
 		while ( have_posts() ) : the_post();
-
-			/*
-			 * Include the post format-specific template for the content. If you want to
-			 * use this in a child theme, then include a file called called content-___.php
-			 * (where ___ is the post format) and that will be used instead.
-			 */
-			get_template_part( 'content', get_post_format() );
-
+		$thumbnail = get_the_post_thumbnail_url();
+		?>
+	<section class="business bestselling" id="services">
+    <div class="container-fluid">
+    	<div class="row row-eq-height">
+		<div class="col-md-6 col-sm-4">
+                <div class="row">
+                    <div class="business-img">
+                        <div class="transparent-dark"></div>
+                        <span class="business-title">
+                            <p>Business<strong>&</strong></p> 
+                            <p><strong>idea</strong></p>
+                        </span>
+                        <?php 
+                            if ( has_post_thumbnail() ) { ?>
+                        <img src="<?php echo $thumbnail;?>" class="img-responsive" alt="event">
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-8 dark-bg">
+                <div class="row">
+                    <div class="bold-head"><?php echo get_the_title();?></div>
+                    <div class="business-descr">
+                        <?php the_content();?>
+                    </div>
+                </div>
+            </div>
+        </div></div></section>
+			<div class="col-md-12 col-sm-8 dark-bg">
+			<div class="col-md-3 col-sm-8 dark-bg">	</div>
+			<div class="col-md-6 col-sm-8 dark-bg">	
+				<div class="page_nav_links">  
+                           <div class="prev_next">
+                              <div class="nav_left" style="width: 50%;float: left;">
+                                  <span class="prev nav_link"> < Previous Post</span>
+                                  <div class="prev_post"><?php previous_post_link('%link', '%title'); ?></div>
+                              </div>
+                               <div class="nav_right" style="width: 50%;float: right;text-align: right;">
+                                  <span class="next nav_link">Next Post > </span>
+                                  <div class="prev_post"><?php next_post_link('%link', '%title'); ?></div>
+                              </div>
+                          </div>
+                </div></div>
+			<div class="col-md-3 col-sm-8 dark-bg">	</div>
+            </div>
+            <div class="col-md-12 col-sm-8 dark-bg">
+            	<div class="col-md-3 col-sm-8 dark-bg">	</div>
+            <div class="col-md-6 col-sm-8 dark-bg">
+			<?php 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) :
 				comments_template();
-			endif;
-
-			// Previous/next post navigation.
-			the_post_navigation( array(
-				'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'twentyfifteen' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Next post:', 'twentyfifteen' ) . '</span> ' .
-					'<span class="post-title">%title</span>',
-				'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'twentyfifteen' ) . '</span> ' .
-					'<span class="screen-reader-text">' . __( 'Previous post:', 'twentyfifteen' ) . '</span> ' .
-					'<span class="post-title">%title</span>',
-			) );
-
-		// End the loop.
-		endwhile;
-		?>
-
+			endif;?>
+			</div>
+				<div class="col-md-3 col-sm-8 dark-bg">	</div>
+            </div>
+			<?php endwhile; ?>
+		
+<div class="col-md-6 col-sm-8 dark-bg">
 		</main><!-- .site-main -->
 	</div><!-- .content-area -->
-
+</div></div></div>
 <?php get_footer(); ?>

@@ -54,7 +54,7 @@
                     <ul>
                         <li><a href="<?php echo site_url();?>">home</a></li>
                         <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
-                        <li><a href="<?php echo site_url();?>/service">events calendar</a></li>
+                        <li><a href="<?php echo site_url();?>/service">Services</a></li>
                         <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                 </div>
@@ -68,7 +68,7 @@
                     <ul>
                        <li><a href="<?php echo site_url();?>">home</a></li>
                         <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
-                        <li><a href="<?php echo site_url();?>/service">events calendar</a></li>
+                        <li><a href="<?php echo site_url();?>/service">Services</a></li>
                         <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                   </div>
