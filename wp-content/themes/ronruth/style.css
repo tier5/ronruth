@@ -2035,8 +2035,14 @@ div#rev_slider_1_1_wrapper {
     height: 459px !important;
     position: relative;
 }
-
-
+.woocommerce ul.products li.product h3 {
+    width: 100% !important;
+    margin-bottom: 1em;
+}
+.woocommerce ul.products li.product .button {
+    margin-top: -2em !important;
+    float: right;
+}
 
 
 
