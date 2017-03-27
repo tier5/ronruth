@@ -2043,8 +2043,47 @@ div#rev_slider_1_1_wrapper {
     margin-top: -2em !important;
     float: right;
 }
-
-
-
-
-
+.single_blog.bold-head {
+    margin-left: 0px;
+    text-align: left;
+padding:15px;	
+}
+.single_blog.business-descr {
+    padding: 20px;
+    text-align: left;
+}
+.single_blog.business-descr p {
+    font-size:18px;
+     text-align: justify;
+}
+.single_blog_comment label {
+    float: left;
+    vertical-align: middle;
+width: 100px;
+}
+.comment-respond form input{width:58% !important;}
+.single_blog_comment .form-submit {
+    margin-left: 18%;
+    width: 100%;
+}
+.single-blog {
+    padding: 0px;
+    border-bottom: none;	
+}
+.col-md-6.col-sm-8.dark-bg.single_blog_comment {
+    bottom: 10px;
+}
+.col-md-6.col-sm-8.dark-bg.single-blog_pagination {
+    padding: 23px 0 0px;
+    color: #FC6334;
+}
+.single_blog.business-descr {
+    color: #000;
+}
+.comment-author.vcard {
+    background-color: #fff;
+}
+.comment-metadata a {
+    background-color: #fff;
+    color: #000;
+}
