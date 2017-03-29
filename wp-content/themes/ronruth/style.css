@@ -117,7 +117,7 @@ a{
 }
 
 a:hover, a:focus{
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .clear{
@@ -200,6 +200,7 @@ a:hover, a:focus{
     color: #000;
     border-right: 3px solid #888888;
     padding: 10px 0;
+   outline: 0;
 }
 
 .navigation ul li:last-child a{
@@ -2046,7 +2047,7 @@ div#rev_slider_1_1_wrapper {
 .single_blog.bold-head {
     margin-left: 0px;
     text-align: left;
-padding:15px;	
+padding:15px;   
 }
 .single_blog.business-descr {
     padding: 20px;
@@ -2068,7 +2069,7 @@ width: 100px;
 }
 .single-blog {
     padding: 0px;
-    border-bottom: none;	
+    border-bottom: none;    
 }
 .col-md-6.col-sm-8.dark-bg.single_blog_comment {
     bottom: 10px;

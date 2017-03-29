@@ -26,7 +26,7 @@
 <div class="page-scroll-buttons">
 	<ul>
 		<li class="current"><a href="#about-header">&nbsp;</a></li>
-		<li><a href="#wedding planner">&nbsp;</a></li>
+		<li><a href="#wedding">&nbsp;</a></li>
 		<li><a href="#performer">&nbsp;</a></li>
 		<li><a href="#mentor">&nbsp;</a></li>
 		<li><a href="#teacher">&nbsp;</a></li>
@@ -277,6 +277,22 @@ if ( $q->have_posts() ) {
 	    	$(this).parent().addClass("current");
 	    });
 	});
+
+	$(window).on('scroll', function() {
+		var scrollTop = $(this).scrollTop();
+          $('.each-block').each(function() {
+              if($(window).scrollTop() >= $(this).offset().top) {
+
+
+			    var id = $(this).attr('id');
+                  $(".page-scroll-buttons ul li a").parent().removeClass("current");
+                  $('.page-scroll-buttons ul li a[href=\\#'+ id +']').parent().addClass('current');
+              }else if($(window).scrollTop() <= 0){
+              	$(".page-scroll-buttons ul li a").parent().siblings().removeClass("current"); 
+			    $('.page-scroll-buttons ul li a[href=\\#about-header]').parent().addClass('current');
+              }
+          });
+      });
 </script>
 
 <script type="text/javascript">
