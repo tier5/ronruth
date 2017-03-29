@@ -57,10 +57,10 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="navigation">
-                    <ul>
+                   <ul>
                         <li><a href="<?php echo site_url();?>">home</a></li>
-                        <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
-                        <li><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li class=""><a href="<?php echo site_url();?>/about-us">about ronruth</a></li>
+                        <li class=""><a href="<?php echo site_url();?>/service">Services</a></li>
                         <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                 </div>
@@ -71,10 +71,10 @@
                     <span class="span bar bottom" style="background-color: #fff;">&nbsp;</span>
                   </a>
                   <div class="main-menu">
-                    <ul>
+                     <ul>
                         <li><a href="<?php echo site_url();?>">home</a></li>
-                        <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
-                        <li><a href="<?php echo site_url();?>">events calendar</a></li>
+                        <li class=""><a href="<?php echo site_url();?>/about-us">about ronruth</a></li>
+                        <li class=""><a href="<?php echo site_url();?>/service">Services</a></li>
                         <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                   </div>
