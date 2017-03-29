@@ -51,11 +51,23 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="navigation">
+                <?php if(is_page('about-us')){
+                    $addClass = "active";
+                }else if(is_page('service')){
+                    $addClass2 = "active";
+                }else if(is_page('learning-resources')){
+                    $addClass3 = "active";
+                }else{
+                    $addClass = "";
+                    $addClass2 = "";
+                    $addClass3 = "";
+                }
+                ?>
                     <ul>
                         <li><a href="<?php echo site_url();?>">home</a></li>
-                        <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
-                        <li><a href="<?php echo site_url();?>/service">Services</a></li>
-                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
+                        <li class="<?php echo $addClass;?>"><a href="<?php echo site_url();?>/about-us">about ronruth</a></li>
+                        <li class="<?php echo $addClass2;?>"><a href="<?php echo site_url();?>/service">Services</a></li>
+                        <li class="<?php echo $addClass3;?>"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                 </div>
                 <div class="mobile-menu">
@@ -66,10 +78,10 @@
                   </a>
                   <div class="main-menu">
                     <ul>
-                       <li><a href="<?php echo site_url();?>">home</a></li>
-                        <li><a href="<?php echo site_url();?>/about-us">about us</a></li>
-                        <li><a href="<?php echo site_url();?>/service">Services</a></li>
-                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
+                        <li><a href="<?php echo site_url();?>">home</a></li>
+                        <li class="<?php echo $addClass;?>"><a href="<?php echo site_url();?>/about-us">about ronruth</a></li>
+                        <li class="<?php echo $addClass2;?>"><a href="<?php echo site_url();?>/service">Services</a></li>
+                        <li class="<?php echo $addClass3;?>"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                   </div>
                 </div>

@@ -41,11 +41,11 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="navigation">
-                    <ul>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">events calendar</a></li>
-                        <li class="active"><a href="#">learning resources</a></li>
+                   <ul>
+                        <li><a href="<?php echo site_url();?>">home</a></li>
+                        <li class=""><a href="<?php echo site_url();?>/about-us">about ronruth</a></li>
+                        <li class=""><a href="<?php echo site_url();?>/service">Services</a></li>
+                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                 </div>
                 <div class="mobile-menu">
@@ -55,11 +55,11 @@
                     <span class="span bar bottom" style="background-color: #fff;">&nbsp;</span>
                   </a>
                   <div class="main-menu">
-                    <ul>
-                        <li><a href="#">home</a></li>
-                        <li><a href="#">about us</a></li>
-                        <li><a href="#">events calendar</a></li>
-                        <li class="active"><a href="#">learning resources</a></li>
+                   <ul>
+                        <li><a href="<?php echo site_url();?>">home</a></li>
+                        <li class=""><a href="<?php echo site_url();?>/about-us">about ronruth</a></li>
+                        <li class=""><a href="<?php echo site_url();?>/service">Services</a></li>
+                        <li class="active"><a href="<?php echo site_url();?>/learning-resources">learning resources</a></li>
                     </ul>
                   </div>
                 </div>
