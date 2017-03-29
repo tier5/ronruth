@@ -4,37 +4,37 @@
 */
 get_header();
 $blog_args = array(
-	'post_type' => 'post',
-	'posts_per_page' => 6,
-	'order_by' => 'id',
-	'order' => 'DESC'
+    'post_type' => 'post',
+    'posts_per_page' => 6,
+    'order_by' => 'id',
+    'order' => 'DESC'
 );
 $blog_query = new WP_Query($blog_args);
 
 $page_args = array(
-	'post_type' => 'page',
-	'page_id' => 27
+    'post_type' => 'page',
+    'page_id' => 27
 );
 $page_query = new WP_Query($page_args);
 
 
 $product_args = array(
-	'post_type' => 'product',
-	'posts_per_page' => 4,
-	'order_by' => 'id',
-	'order' => 'DESC'
+    'post_type' => 'product',
+    'posts_per_page' => 4,
+    'order_by' => 'id',
+    'order' => 'DESC'
 
 );
 $product_query = new Wp_Query($product_args);
 ?>
 <section class="workshop">
     <div class="container">
-        <a class="side_events" style="position: fixed;bottom: 383px;right: 0px;background-color: #FC6334;color: #fff;padding:22px;font-size:20px;">EVENTS</a>
+        <a class="side_events" style="position: fixed;bottom: 383px;right: 0px;background-color: #FC6334;color: #fff;padding:22px;font-size:20px;z-index: 999;">EVENTS</a>
         <div class="row row-eq-height">
             <div class="col-md-3">
                 <div class="workshp-block">
                     <div class="image">
-                    	<?php $blog_image1 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[0]->ID ),'full');?>
+                        <?php $blog_image1 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[0]->ID ),'full');?>
                         <a href="<?php echo get_permalink($blog_query->posts[0]->ID);?>"><img src="<?php echo ($blog_image1[0]!="")?$blog_image1[0]:"";?>" alt="workshop" class="img-responsive"></a>
                     </div>
                     <div class="content">
@@ -48,7 +48,7 @@ $product_query = new Wp_Query($product_args);
                 <div class="workshp-middle-block">
                     <div class="content">
                     <?php if($page_query->have_posts()):?>
-                    	<?php while($page_query->have_posts()):$page_query->the_post();?>
+                        <?php while($page_query->have_posts()):$page_query->the_post();?>
                         <p class="big-text"><?php echo get_the_title();?></p>
                         <p><?php echo get_the_content();?></p>
                     <?php endwhile;?>
@@ -59,7 +59,7 @@ $product_query = new Wp_Query($product_args);
             <div class="col-md-3">
                 <div class="workshp-block">
                     <div class="image">
-                    	<?php $blog_image2 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[1]->ID ),'full');?>
+                        <?php $blog_image2 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[1]->ID ),'full');?>
                        <a href="<?php echo get_permalink($blog_query->posts[1]->ID);?>"><img src="<?php echo ($blog_image2[0]!="")?$blog_image2[0]:"";?>" alt="workshop" class="img-responsive"></a>
                     </div>
                     <div class="content">
@@ -75,7 +75,7 @@ $product_query = new Wp_Query($product_args);
             <div class="col-md-3">
                 <div class="workshp-block">
                     <div class="image">
-                    	<?php $blog_image3 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[2]->ID ),'full');?>
+                        <?php $blog_image3 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[2]->ID ),'full');?>
                         <a href="<?php echo get_permalink($blog_query->posts[2]->ID);?>"><img src="<?php echo ($blog_image3[0]!="")?$blog_image3[0]:"";?>" alt="workshop" class="img-responsive"></a>
                     </div>
                     <div class="content">
@@ -88,7 +88,7 @@ $product_query = new Wp_Query($product_args);
             <div class="col-md-3">
                 <div class="workshp-block">
                     <div class="image">
-                    	<?php $blog_image4 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[3]->ID ),'full');?>
+                        <?php $blog_image4 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[3]->ID ),'full');?>
                         <a href="<?php echo get_permalink($blog_query->posts[3]->ID);?>"><img src="<?php echo ($blog_image4[0]!="")?$blog_image4[0]:"";?>" alt="workshop" class="img-responsive"></a>
                     </div>
                     <div class="content">
@@ -101,7 +101,7 @@ $product_query = new Wp_Query($product_args);
             <div class="col-md-3">
                 <div class="workshp-block">
                     <div class="image">
-                    	<?php $blog_image5 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[4]->ID ),'full');?>
+                        <?php $blog_image5 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[4]->ID ),'full');?>
                         <a href="<?php echo get_permalink($blog_query->posts[4]->ID);?>"><img src="<?php echo ($blog_image5[0]!="")?$blog_image5[0]:"";?>" alt="workshop" class="img-responsive"></a>
                     </div>
                     <div class="content">
@@ -114,7 +114,7 @@ $product_query = new Wp_Query($product_args);
             <div class="col-md-3">
                 <div class="workshp-block">
                     <div class="image">
-                    	<?php $blog_image6 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[5]->ID ),'full');?>
+                        <?php $blog_image6 = wp_get_attachment_image_src(get_post_thumbnail_id($blog_query->posts[5]->ID ),'full');?>
                        <a href="<?php echo get_permalink($blog_query->posts[5]->ID);?>"> <img src="<?php echo ($blog_image6[0]!="")?$blog_image6[0]:"";?>" alt="workshop" class="img-responsive"></a>
                     </div>
                     <div class="content">
@@ -138,11 +138,11 @@ $product_query = new Wp_Query($product_args);
         </div>
         <div class="row">
         <?php if($product_query->have_posts()):?>
-        	<?php while($product_query->have_posts()):$product_query->the_post();?>
-        		<?php $pro_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
-        		$currency = get_woocommerce_currency_symbol();
-        		$price = get_post_meta( get_the_ID(), '_regular_price', true);
-        		?>
+            <?php while($product_query->have_posts()):$product_query->the_post();?>
+                <?php $pro_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()),'full');
+                $currency = get_woocommerce_currency_symbol();
+                $price = get_post_meta( get_the_ID(), '_regular_price', true);
+                ?>
             <div class="col-md-3 col-sm-3">
                 <div class="book-block">
                     <div class="image">
