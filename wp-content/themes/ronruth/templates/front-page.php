@@ -29,7 +29,7 @@ $product_query = new Wp_Query($product_args);
 ?>
 <section class="workshop">
     <div class="container">
-        <a class="side_events" style="position: fixed;bottom: 383px;right: 0px;background-color: #FC6334;color: #fff;padding:22px;font-size:20px;z-index: 999;">EVENTS</a>
+        <a class="side_events">EVENTS</a>
         <div class="row row-eq-height">
             <div class="col-md-3">
                 <div class="workshp-block">

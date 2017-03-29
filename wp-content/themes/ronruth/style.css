@@ -143,11 +143,29 @@ a:hover, a:focus{
     
 }
 
-.home-header{
+/*.home-header{
     background: url(images/banner.jpg) no-repeat top right fixed;
     width: 100%;
     background-size: 100% 100%;
+}*/
+
+.home-header{
+    background: url(images/banner.jpg) no-repeat top right fixed;
+    width: 100%;
+    background-size: cover;
 }
+
+.side_events{transform: rotate(90deg); padding: 4px 14px; right: -38px !important;
+position: fixed; background-color: #FC6334;color: #fff; font-size:20px;z-index: 999; 
+top: 25%;
+
+}
+
+
+
+
+
+
 
 .logo{
     padding: 30px 0 10px;
@@ -1934,6 +1952,10 @@ footer a:hover{
     .event-header h1 {
         font-size: 40px;
     }
+
+    .side_events{ font-size: 15px; padding: 2px 16px; }
+
+
 
 }
 
